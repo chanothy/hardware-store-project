@@ -1,0 +1,3 @@
+Hammer 3 30 3
+Shears 5 25 1
+Cactus 20 10 21
