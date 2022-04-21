@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.io.PrintWriter;
 
 public class FileUtils {
     private static File inputFile = new File("../resources/input.txt");
@@ -42,9 +43,12 @@ public class FileUtils {
 //
 //    }
 
-    public void writeStaffToFile(List<Staff> employees) {
+    public void writeStaffToFile(List<Staff> employees) throws IOException{
         // TODO
-
+        PrintWriter output = new PrintWriter("resources/sampleStaff.txt");
+        for (int i = 0; i<employees.size(); i++) {
+            output.println(employees.get(i));
+        }
     }
 
 //    public static List<String> readCommandsFromFile() throws IOException {
