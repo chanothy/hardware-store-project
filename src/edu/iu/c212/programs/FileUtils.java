@@ -48,6 +48,7 @@ public class FileUtils {
         PrintWriter output = new PrintWriter("resources/sampleStaff.txt");
         for (int i = 0; i<employees.size(); i++) {
             output.println(employees.get(i));
+
         }
     }
 
