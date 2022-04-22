@@ -35,8 +35,6 @@ public class Staff {
     }
 
     public static void hire(String staffName, int age, String role) throws IOException {
-        File fileInput = new File("staff_availability_IN.txt");
-        Scanner in = new Scanner(fileInput);
         ArrayList storeLines = (ArrayList) FileUtils.readStaffFromFile();
         for (int i =0; i<storeLines.size(); i++) {
             System.out.println(storeLines.get(i));

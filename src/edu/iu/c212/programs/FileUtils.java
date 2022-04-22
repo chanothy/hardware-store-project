@@ -29,8 +29,7 @@ public class FileUtils {
 
     public static List<Staff> readStaffFromFile() throws IOException {
         // TODO
-        File fileInput = new File("../resources/staff_availability_IN.txt");
-        Scanner in = new Scanner(fileInput);
+        Scanner in = new Scanner(staffAvailabilityFile);
         ArrayList staffLines = new ArrayList<String>();
         while (in.hasNextLine()) {
             staffLines.add(in.nextLine());
@@ -45,7 +44,7 @@ public class FileUtils {
 
     public void writeStaffToFile(List<Staff> employees) throws IOException{
         // TODO
-        PrintWriter output = new PrintWriter("../resources/sampleStaff.txt");
+        PrintWriter output = new PrintWriter(staffAvailabilityFile);
         for (int i = 0; i<employees.size(); i++) {
             output.println(employees.get(i));
 
