@@ -1,12 +1,9 @@
 package edu.iu.c212.models;
 
-import edu.iu.c212.programs.FileUtils;
+import edu.iu.c212.utils.FileUtils;
 
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class Staff {
 
