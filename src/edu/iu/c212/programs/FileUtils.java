@@ -12,7 +12,7 @@ public class FileUtils {
     private static File inputFile = new File("../resources/input.txt");
     private static File outputFile = new File("../resources/output.txt");
     private static File inventoryFile = new File("../resources/inventory.txt");
-    private static File staffFile = new File("../resources/staff.txt");
+//    private static File staffFile = new File("../resources/staff.txt");
     private static File staffAvailabilityFile = new File("../resources/staff_availability_IN.txt");
     private static File shiftSchedulesFile = new File("../resources/shift_schedules_IN.txt");
     private static File storeScheduleFile = new File("../resources/store_schedule_OUT.txt");
@@ -27,9 +27,9 @@ public class FileUtils {
 //
 //    }
 
-    public List<Staff> readStaffFromFile() throws IOException {
+    public static List<Staff> readStaffFromFile() throws IOException {
         // TODO
-        File fileInput = new File("resources/sampleStaff.txt");
+        File fileInput = new File("../resources/staff_availability_IN.txt");
         Scanner in = new Scanner(fileInput);
         ArrayList staffLines = new ArrayList<String>();
         while (in.hasNextLine()) {
@@ -45,7 +45,7 @@ public class FileUtils {
 
     public void writeStaffToFile(List<Staff> employees) throws IOException{
         // TODO
-        PrintWriter output = new PrintWriter("resources/sampleStaff.txt");
+        PrintWriter output = new PrintWriter("../resources/sampleStaff.txt");
         for (int i = 0; i<employees.size(); i++) {
             output.println(employees.get(i));
 
