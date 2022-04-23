@@ -1,4 +1,6 @@
 package edu.iu.c212;
 
-public class StaffScheduler {
+public class StaffScheduler
+{
+
 }
