@@ -1,4 +1,4 @@
-package edu.iu.c212.programs;
+package edu.iu.c212;
 
 import java.util.ArrayList;
 

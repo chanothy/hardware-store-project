@@ -33,27 +33,26 @@ public class FileUtils {
         // TODO
 //        System.out.println(staffAvailabilityFile/*.toURI()*/.getPath() + "\n" + staffAvailabilityFile.exists());
         Scanner in = new Scanner(staffAvailabilityFile);
-        ArrayList staffLines = new ArrayList<String>();
+        ArrayList staffLines = new ArrayList<Staff>();
         while (in.hasNextLine()) {
-            staffLines.add(in.nextLine());
+            String[] splitLine = ((String) in.nextLine()).split(" ");
+            String name = splitLine[0] + " " + splitLine[1];
+            Integer age = Integer.parseInt(splitLine[2]);
+            String job = splitLine[3];
+            String avail = splitLine[4];
+            staffLines.add(new Staff(name,age,job,avail));
         }
-
         return staffLines;
     }
 
-//    public void writeInventoryToFile(List<Item> items) {
+//    public void writeInventoryToFile(List<Item> items) throws IOException{
 //        // TODO
 //
 //    }
 
-    public void writeStaffToFile(List<Staff> employees) throws IOException{
-        // TODO
-        PrintWriter output = new PrintWriter(staffAvailabilityFile);
-        for (int i = 0; i<employees.size(); i++) {
-            output.println(employees.get(i));
-
-        }
-    }
+//    public void writeStaffToFile(List<Staff> employees) throws IOException{
+//        // TODO
+//    }
 
 //    public static List<String> readCommandsFromFile() throws IOException {
 //        // TODO

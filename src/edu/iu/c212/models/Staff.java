@@ -31,11 +31,16 @@ public class Staff {
         return role;
     }
 
-    public static void hire(String staffName, int age, String role) throws IOException {
+    public static void hire(String staffName, int age, String role, String availability) throws IOException {
         ArrayList storeLines = (ArrayList) FileUtils.readStaffFromFile();
+        storeLines.add(staffName + " " + age + " " + role + " " + availability);
         for (int i =0; i<storeLines.size(); i++) {
             System.out.println(storeLines.get(i));
         }
+    }
+
+    public static void test() throws  IOException{
+        System.out.println(FileUtils.readStaffFromFile().get(0).getAge());
     }
 /*
     public static void fire(String staffName) throws IOException {
@@ -51,6 +56,6 @@ public class Staff {
     }
 */
     public static void main(String[] args) throws IOException{
-        hire("Tim",3,"M");
+        test();
     }
 }
