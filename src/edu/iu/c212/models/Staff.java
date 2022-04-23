@@ -47,7 +47,7 @@ public class Staff {
     public static void promote(String staffName, String role) throws IOException {
         File fileInput = new File("resources/staff_availability_IN.txt");
         Scanner in = new Scanner(fileInput);
-        ArrayList storeLines = new ArrayList<String>();
+        ArrayList storeLines = new ArrayList<String>() ;
     }
 */
     public static void main(String[] args) throws IOException{
