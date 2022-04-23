@@ -21,12 +21,12 @@ public class FileUtils {
         System.out.println(inventoryFile/*.toURI()*/.getPath() + "\n" + inventoryFile.exists());
         // depending on your OS, toURI() may need to be used when working with paths
         // TODO
-        Scanner in = new Scanner(inventoryFile);
-        ArrayList storeLines = new ArrayList<String>();
-        while (in.hasNextLine()) {
-            storeLines.add(in.nextLine());
-        }
-        return storeLines;
+//        Scanner in = new Scanner(inventoryFile);
+//        ArrayList storeLines = new ArrayList<String>();
+//        while (in.hasNextLine()) {
+//            storeLines.add(in.nextLine());
+//        }
+//        return storeLines;
     }
 
     public static List<Staff> readStaffFromFile() throws IOException {
