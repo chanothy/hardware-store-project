@@ -31,6 +31,8 @@ public class Staff {
         return role;
     }
 
+    public String getAvailability() { return availability; }
+
     public static void hire(String staffName, int age, String role, String availability) throws IOException {
         ArrayList storeLines = (ArrayList) FileUtils.readStaffFromFile();
         storeLines.add(staffName + " " + age + " " + role + " " + availability);
@@ -39,8 +41,8 @@ public class Staff {
         }
     }
 
-    public static void test() throws  IOException{
-        System.out.println(FileUtils.readStaffFromFile().get(0).getAge());
+    public static void test() throws IOException{
+        FileUtils.writeStaffToFile(FileUtils.readStaffFromFile());
     }
 /*
     public static void fire(String staffName) throws IOException {
