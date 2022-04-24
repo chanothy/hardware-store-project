@@ -18,18 +18,26 @@ public class FileUtils {
     private static File shiftSchedulesFile = new File("src/edu/iu/c212/resources/shift_schedules_IN.txt");
     private static File storeScheduleFile = new File("src/edu/iu/c212/resources/store_schedule_OUT.txt");
 
-//    public static List<Item> readInventoryFromFile() throws IOException {
+    public static List<Item> readInventoryFromFile() throws IOException {
 //        System.out.println(inventoryFile/*.toURI()*/.getPath() + "\n" + inventoryFile.exists());
         // depending on your OS, toURI() may need to be used when working with paths
         // TODO
-//        Scanner in = new Scanner(inventoryFile);
-//        ArrayList storeLines = new ArrayList<String>();
-//        while (in.hasNextLine()) {
-//            storeLines.add(in.nextLine());
-//        }
-//        return storeLines;
-//    }
+        Scanner in = new Scanner(inventoryFile);
+        ArrayList itemLines = new ArrayList<Item>();
+        in.nextLine();
+        while (in.hasNextLine()) {
+            String[] splitLine = in.nextLine().split(",");
+            String item = splitLine[0].replaceAll("'", "");
+            double itemCost = Integer.parseInt(splitLine[1]);
+            int itemQuant = Integer.parseInt(splitLine[2]);
+            int itemAisle = Integer.parseInt(splitLine[3]);
+            itemLines.add(new Item(item, itemCost, itemQuant, itemAisle));
+//            System.out.println(item);
+        }
+        return itemLines;
+    }
 
+    // Stores staff
     public static List<Staff> readStaffFromFile() throws IOException {
         // TODO
 //        System.out.println(staffAvailabilityFile/*.toURI()*/.getPath() + "\n" + staffAvailabilityFile.exists());
@@ -51,6 +59,7 @@ public class FileUtils {
 //
 //    }
 
+    // updates staff file
     public static void writeStaffToFile(List<Staff> employees) throws IOException{
         // TODO
         ArrayList staff = new ArrayList<String>();
@@ -75,6 +84,8 @@ public class FileUtils {
 //        // TODO
 //    }
 //
+
+    // updates outputfile
     public static void writeLineToOutputFile(String line) throws IOException{
         // TODO
         Scanner in = new Scanner(outputFile);
@@ -87,7 +98,6 @@ public class FileUtils {
         for (int i = 0; i<outputLines.size(); i++) {
             out.println(outputLines.get(i));
         }
-
         in.close();
         out.close();
     }
