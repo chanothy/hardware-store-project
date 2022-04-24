@@ -15,6 +15,7 @@ public class Staff {
     private int age;
     private String role;
     private String availability;
+    private int hoursAssigned = 0;
 
     public Staff(String name, int age, String role, String availability) {
         this.fullName = name;
@@ -36,6 +37,12 @@ public class Staff {
     }
 
     public String getAvailability() { return availability; }
+
+    public void setHoursAssigned(int n)
+    {
+        this.hoursAssigned = this.hoursAssigned + n;
+    }
+
 
     public static void hire(String staffName, int age, String role, String availability) throws IOException {
         List newStaff = FileUtils.readStaffFromFile();
