@@ -70,14 +70,34 @@ public class Staff {
 
     }
 
-//    public static void promote(String staffName, String role) throws IOException {
-//        File fileInput = new File("resources/staff_availability_IN.txt");
-//        Scanner in = new Scanner(fileInput);
-//        ArrayList storeLines = new ArrayList<String>();
-//    }
+    public static void promote(String staffName, String role) throws IOException {
+        List newStaff = FileUtils.readStaffFromFile();
+        ArrayList updateStaff = new ArrayList<Staff>();
+        for (int i = 0; i<newStaff.size(); i++) {
+            if (((Staff) newStaff.get(i)).getName().equals(staffName)) {
+                updateStaff.add(new Staff(staffName, ((Staff) newStaff.get(i)).getAge(), role, ((Staff) newStaff.get(i)).getAvailability()));
+            }
+            else {
+                updateStaff.add(newStaff.get(i));
+            }
+        }
+        String fullRole;
+        if (role.equals("C")) {
+            fullRole = "Cashier";
+        }
+        else if (role.equals("M")) {
+            fullRole = "Manager";
+        }
+        else {
+            fullRole = "Gardener";
+        }
+        FileUtils.writeStaffToFile(updateStaff);
+        FileUtils.writeLineToOutputFile(staffName + " was promoted to " + fullRole);
+    }
 
     public static void test() throws IOException{
 //        hire("Sierra Napier", 18, "C", "M.W.F");
+        promote("Addmanda Smith", "C");
 //        hire("Tim Chan", 18, "M", "M.W.F");
 //        fire("Sierra Napier");
 //        fire("Tim Chan");
