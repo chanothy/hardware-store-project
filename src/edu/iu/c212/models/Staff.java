@@ -15,35 +15,33 @@ public class Staff {
     private int age;
     private String role;
     private String availability;
-    private int hoursAssigned = 0;
 
+    // Staff object contructor
     public Staff(String name, int age, String role, String availability) {
         this.fullName = name;
         this.age = age;
         this.role = role;
         this.availability = availability;
     }
-
+    // name getter
     public String getName(){
         return fullName;
     }
 
+    // age getter
     public int getAge() {
         return age;
     }
 
+    // role getter
     public String getRole(){
         return role;
     }
 
+    // availability getter
     public String getAvailability() { return availability; }
 
-    public void setHoursAssigned(int n)
-    {
-        this.hoursAssigned = this.hoursAssigned + n;
-    }
-
-
+    // hiring method
     public static void hire(String staffName, int age, String role, String availability) throws IOException {
         List newStaff = FileUtils.readStaffFromFile();
         newStaff.add(new Staff(staffName,age,role,availability));
@@ -61,6 +59,7 @@ public class Staff {
         FileUtils.writeLineToOutputFile(staffName + " has been hired as a " + fullRole);
     }
 
+    // firing method
     public static void fire(String staffName) throws IOException {
         List newStaff = FileUtils.readStaffFromFile();
         ArrayList updateStaff = new ArrayList<Staff>();
@@ -77,6 +76,7 @@ public class Staff {
 
     }
 
+    // promotion method
     public static void promote(String staffName, String role) throws IOException {
         List newStaff = FileUtils.readStaffFromFile();
         ArrayList updateStaff = new ArrayList<Staff>();
@@ -104,10 +104,12 @@ public class Staff {
 
     public static void test() throws IOException{
 //        hire("Sierra Napier", 18, "C", "M.W.F");
-        promote("Addmanda Smith", "C");
+//        promote("Addmanda Smith", "C");
 //        hire("Tim Chan", 18, "M", "M.W.F");
 //        fire("Sierra Napier");
 //        fire("Tim Chan");
+//        System.out.println(FileUtils.readInventoryFromFile().get(0));
+//        System.out.println(FileUtils.readInventoryFromFile().get(1).getName());
     }
 
     public static void main(String[] args) throws IOException{
