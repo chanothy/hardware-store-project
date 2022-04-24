@@ -15,6 +15,7 @@ public class Staff {
     private int age;
     private String role;
     private String availability;
+    private double hoursAssigned = 0;
 
     // Staff object contructor
     public Staff(String name, int age, String role, String availability) {
@@ -40,6 +41,12 @@ public class Staff {
 
     // availability getter
     public String getAvailability() { return availability; }
+
+    // setting hours assigned
+    public void setHoursAssigned(double n)
+    {
+        this.hoursAssigned = this.hoursAssigned + n;
+    }
 
     // hiring method
     public static void hire(String staffName, int age, String role, String availability) throws IOException {
