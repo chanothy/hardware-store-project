@@ -54,12 +54,22 @@ public class Staff {
         FileUtils.writeLineToOutputFile(staffName + " has been hired as a " + fullRole);
     }
 
-//    public static void fire(String staffName) throws IOException {
-//        File fileInput = new File("resources/staff_availability_IN.txt");
-//        Scanner in = new Scanner(fileInput);
-//        ArrayList storeLines = new ArrayList<String>();
-//    }
-//
+    public static void fire(String staffName) throws IOException {
+        List newStaff = FileUtils.readStaffFromFile();
+        ArrayList updateStaff = new ArrayList<Staff>();
+        for (int i = 0; i<newStaff.size(); i++) {
+            if (((Staff) newStaff.get(i)).getName().equals(staffName)) {
+                continue;
+            }
+            else {
+                updateStaff.add(newStaff.get(i));
+            }
+        }
+        FileUtils.writeStaffToFile(updateStaff);
+        FileUtils.writeLineToOutputFile(staffName + " was fired");
+
+    }
+
 //    public static void promote(String staffName, String role) throws IOException {
 //        File fileInput = new File("resources/staff_availability_IN.txt");
 //        Scanner in = new Scanner(fileInput);
@@ -67,8 +77,10 @@ public class Staff {
 //    }
 
     public static void test() throws IOException{
-        hire("Sierra Napier", 18, "C", "M.W.F");
-//        FileUtils.writeStaffToFile(FileUtils.readStaffFromFile());
+//        hire("Sierra Napier", 18, "C", "M.W.F");
+//        hire("Tim Chan", 18, "M", "M.W.F");
+//        fire("Sierra Napier");
+//        fire("Tim Chan");
     }
 
     public static void main(String[] args) throws IOException{

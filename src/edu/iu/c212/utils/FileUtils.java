@@ -63,20 +63,7 @@ public class FileUtils {
             System.out.println(staff.get(i));
             out.println(staff.get(i));
         }
-
         out.close();
-
-
-//        for (int i = 0; i<employees.size(); i++) {
-//            String name = employees.get(i).getName();
-//            Integer age = employees.get(i).getAge();
-//            String job = employees.get(i).getRole();
-//            String avail = employees.get(i).getAvailability();
-//            staff.add(new Staff(name,age,job,avail));
-//            System.out.println(name);
-//        }
-//
-
     }
 
 //    public static List<String> readCommandsFromFile() throws IOException {

@@ -31,3 +31,8 @@ Thank you for visiting High’s Hardware and Gardening!
 Schedule created.
 Planks sawed.
 Thank you for visiting High’s Hardware and Gardening!
+
+// Actual Output
+Sierra Napier has been hired as a Cashier
+Tim Chan has been hired as a Manager
+Sierra Napier was fired
