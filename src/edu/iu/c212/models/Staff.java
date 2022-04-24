@@ -7,6 +7,7 @@ import java.awt.image.AreaAveragingScaleFilter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Staff {
 
@@ -37,35 +38,39 @@ public class Staff {
     public String getAvailability() { return availability; }
 
     public static void hire(String staffName, int age, String role, String availability) throws IOException {
-//        ArrayList storeLines = new ArrayList();
-//        for (int i =0; i<FileUtils.readStaffFromFile().size();i++){
-//        }
-//        storeLines.add(staffName + " " + age + " " + role + " " + availability);
-//        for (int i =0; i<storeLines.size(); i++) {
-//            System.out.println(storeLines.get(i));
-//        }
         List newStaff = FileUtils.readStaffFromFile();
         newStaff.add(new Staff(staffName,age,role,availability));
+        String fullRole = "";
+        if (role.equals("C")) {
+            fullRole = "Cashier";
+        }
+        else if (role.equals("M")) {
+            fullRole = "Manager";
+        }
+        else {
+            fullRole = "Gardener";
+        }
         FileUtils.writeStaffToFile(newStaff);
+        FileUtils.writeLineToOutputFile(staffName + " has been hired as a " + fullRole);
     }
+
+//    public static void fire(String staffName) throws IOException {
+//        File fileInput = new File("resources/staff_availability_IN.txt");
+//        Scanner in = new Scanner(fileInput);
+//        ArrayList storeLines = new ArrayList<String>();
+//    }
+//
+//    public static void promote(String staffName, String role) throws IOException {
+//        File fileInput = new File("resources/staff_availability_IN.txt");
+//        Scanner in = new Scanner(fileInput);
+//        ArrayList storeLines = new ArrayList<String>();
+//    }
 
     public static void test() throws IOException{
         hire("Sierra Napier", 18, "C", "M.W.F");
 //        FileUtils.writeStaffToFile(FileUtils.readStaffFromFile());
     }
-/*
-    public static void fire(String staffName) throws IOException {
-        File fileInput = new File("resources/staff_availability_IN.txt");
-        Scanner in = new Scanner(fileInput);
-        ArrayList storeLines = new ArrayList<String>();
-    }
 
-    public static void promote(String staffName, String role) throws IOException {
-        File fileInput = new File("resources/staff_availability_IN.txt");
-        Scanner in = new Scanner(fileInput);
-        ArrayList storeLines = new ArrayList<String>();
-    }
-*/
     public static void main(String[] args) throws IOException{
         test();
     }

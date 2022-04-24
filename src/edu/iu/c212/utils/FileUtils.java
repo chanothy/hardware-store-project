@@ -88,8 +88,21 @@ public class FileUtils {
 //        // TODO
 //    }
 //
-//    public static void writeLineToOutputFile(String line) {
-//        // TODO
-//    }
+    public static void writeLineToOutputFile(String line) throws IOException{
+        // TODO
+        Scanner in = new Scanner(outputFile);
+        ArrayList outputLines = new ArrayList<String>();
+        while (in.hasNextLine()) {
+            outputLines.add(in.nextLine());
+        }
+        outputLines.add(line);
+        PrintWriter out = new PrintWriter(outputFile);
+        for (int i = 0; i<outputLines.size(); i++) {
+            out.println(outputLines.get(i));
+        }
+
+        in.close();
+        out.close();
+    }
 
 }
