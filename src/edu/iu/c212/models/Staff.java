@@ -2,8 +2,11 @@ package edu.iu.c212.models;
 
 import edu.iu.c212.utils.FileUtils;
 
+import javax.swing.plaf.FileChooserUI;
+import java.awt.image.AreaAveragingScaleFilter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Staff {
 
@@ -34,15 +37,21 @@ public class Staff {
     public String getAvailability() { return availability; }
 
     public static void hire(String staffName, int age, String role, String availability) throws IOException {
-        ArrayList storeLines = (ArrayList) FileUtils.readStaffFromFile();
-        storeLines.add(staffName + " " + age + " " + role + " " + availability);
-        for (int i =0; i<storeLines.size(); i++) {
-            System.out.println(storeLines.get(i));
-        }
+//        ArrayList storeLines = new ArrayList();
+//        for (int i =0; i<FileUtils.readStaffFromFile().size();i++){
+//        }
+//        storeLines.add(staffName + " " + age + " " + role + " " + availability);
+//        for (int i =0; i<storeLines.size(); i++) {
+//            System.out.println(storeLines.get(i));
+//        }
+        List newStaff = FileUtils.readStaffFromFile();
+        newStaff.add(new Staff(staffName,age,role,availability));
+        FileUtils.writeStaffToFile(newStaff);
     }
 
     public static void test() throws IOException{
-        FileUtils.writeStaffToFile(FileUtils.readStaffFromFile());
+        hire("Sierra Napier", 18, "C", "M.W.F");
+//        FileUtils.writeStaffToFile(FileUtils.readStaffFromFile());
     }
 /*
     public static void fire(String staffName) throws IOException {
