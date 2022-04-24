@@ -17,7 +17,7 @@ public class Staff {
     private String availability;
     private double hoursAssigned = 0;
 
-    // Staff object contructor
+    // Staff object constructor
     public Staff(String name, int age, String role, String availability) {
         this.fullName = name;
         this.age = age;
