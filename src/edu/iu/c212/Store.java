@@ -70,7 +70,7 @@ public class Store implements IStore
 
         // read the input file
         try {
-            File inputFile = new File("input.txt");
+            File inputFile = new File("src/edu/iu/c212/resources/input.txt");
             Scanner inFile = new Scanner(inputFile);
 
             while (inFile.hasNextLine()) {
@@ -103,19 +103,30 @@ public class Store implements IStore
                     // to do:
                     // read full name from input.txt
                     // check staffArrList to see if name is in list
+                    inFile.useDelimiter("[^a-zA-z\s]");
+                    String first = inFile.next();
+                    System.out.println(first);
+
+                    inFile.useDelimiter("[^a-zA-z\\s]");
+                    String last = inFile.next();
+                    System.out.println(last);
+                    String fullName = first + " " + last;
+                    System.out.println(fullName);
+
 
                     int arrSize = staffArrList.size();
 
                     for(int i = 0; i < staffArrList.size(); i++)
                     {
-                        if(staffArrList.get(i).getName().equals())
+                        if(staffArrList.get(i).getName().equals(fullName))
                         {
                             staffArrList.remove(staffArrList.get(i));
+                            System.out.println(fullName + " was fired.");
                         }
                     }
                     if(arrSize == staffArrList.size())
                     {
-                        System.out.println("ERROR: " +  + " cannot be found.");
+                        System.out.println("ERROR: " +  fullName + " cannot be found.");
                     }
                 }
                 else if(command.equals("HIRE"))
