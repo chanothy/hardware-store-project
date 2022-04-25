@@ -38,4 +38,24 @@ public class Item
         return aisleNum;
     }
 
+
+    // add method
+    public static void add()
+    {
+
+    }
+
+    // cost method
+    public static double cost()
+    {
+
+    }
+
+
+    // find method
+    public static Item find()
+    {
+
+    }
+
 }
