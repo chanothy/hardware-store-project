@@ -24,7 +24,7 @@ public class StoreMapDisplay extends JPanel{
 
     public static void display(Item item) {
 
-        JFrame frame = new JFrame("High's Hardware Product Lookup" + item.getName());
+        JFrame frame = new JFrame("High's Hardware Product Lookup: " + item.getName());
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         StoreMap map = new StoreMap(item.getAisleNum());
         frame.setPreferredSize(new Dimension(700, 800));
