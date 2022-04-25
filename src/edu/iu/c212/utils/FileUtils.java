@@ -55,10 +55,20 @@ public class FileUtils {
         return staffLines;
     }
 
-//    public void writeInventoryToFile(List<Item> items) throws IOException{
-//        // TODO
-//
-//    }
+    public void writeInventoryToFile(List<Item> items) throws IOException{
+        // TODO
+        ArrayList inv = new ArrayList<String>();
+        for (int i = 0; i<items.size(); i++) {
+            inv.add(items.get(i).getName() + "," + items.get(i).getPrice() + "," + items.get(i).getQuantity() + "," + items.get(i).getAisleNum());
+//            System.out.println(staff.get(i));
+        }
+        PrintWriter out = new PrintWriter(staffAvailabilityFile);
+        for (int i = 0; i < inv.size(); i++) {
+            System.out.println(inv.get(i));
+            out.println(inv.get(i));
+        }
+        out.close();
+    }
 
     // updates staff file
     public static void writeStaffToFile(List<Staff> employees) throws IOException{
