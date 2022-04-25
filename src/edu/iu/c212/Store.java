@@ -4,9 +4,12 @@ import edu.iu.c212.models.Item;
 import edu.iu.c212.models.Staff;
 import edu.iu.c212.utils.FileUtils;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Store implements IStore
 {
@@ -66,7 +69,71 @@ public class Store implements IStore
         getStaffFromFile();
 
         // read the input file
+        try {
+            File inputFile = new File("input.txt");
+            Scanner inFile = new Scanner(inputFile);
 
+            while (inFile.hasNextLine()) {
+                String command = inFile.next();
+
+                if(command.equals("ADD"))
+                {
+
+                }
+                else if(command.equals("COST"))
+                {
+
+                }
+                else if(command.equals("FIND"))
+                {
+
+                }
+                else if(command.equals("SELL"))
+                {
+
+                }
+                else if(command.equals("QUANTITY"))
+                {
+
+                }
+                else if(command.equals("FIRE"))
+                {
+
+                }
+                else if(command.equals("HIRE"))
+                {
+
+                }
+                else if(command.equals("PROMOTE"))
+                {
+
+                }
+                else if(command.equals("SCHEDULE"))
+                {
+
+                }
+                else if(command.equals("SAW"))
+                {
+
+                }
+                else if(command.equals("EXIT"))
+                {
+
+                }
+                else
+                {
+                    System.out.println("Your command was not recognized.");
+                }
+
+
+
+            }
+            inFile.close();
+        }
+        catch(FileNotFoundException e)
+        {
+            e.printStackTrace();
+        }
 
     }
 }
