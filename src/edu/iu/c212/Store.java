@@ -98,7 +98,25 @@ public class Store implements IStore
                 }
                 else if(command.equals("FIRE"))
                 {
+                    // match name in staffArrList to be fired
 
+                    // to do:
+                    // read full name from input.txt
+                    // check staffArrList to see if name is in list
+
+                    int arrSize = staffArrList.size();
+
+                    for(int i = 0; i < staffArrList.size(); i++)
+                    {
+                        if(staffArrList.get(i).getName().equals())
+                        {
+                            staffArrList.remove(staffArrList.get(i));
+                        }
+                    }
+                    if(arrSize == staffArrList.size())
+                    {
+                        System.out.println("ERROR: " +  + " cannot be found.");
+                    }
                 }
                 else if(command.equals("HIRE"))
                 {

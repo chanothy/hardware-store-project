@@ -9,7 +9,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class Staff {
+public class Staff
+{
 
     private String fullName;
     private int age;
@@ -47,6 +48,8 @@ public class Staff {
     {
         this.hoursAssigned = this.hoursAssigned + n;
     }
+
+
 
     // hiring method
     public static void hire(String staffName, int age, String role, String availability) throws IOException {
