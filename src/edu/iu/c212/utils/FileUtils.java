@@ -55,7 +55,7 @@ public class FileUtils {
         return staffLines;
     }
 
-    public void writeInventoryToFile(List<Item> items) throws IOException{
+    public static void writeInventoryToFile(List<Item> items) throws IOException{
         // TODO
         ArrayList inv = new ArrayList<String>();
         for (int i = 0; i<items.size(); i++) {
