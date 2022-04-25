@@ -11,17 +11,18 @@ import java.util.List;
 public class Store implements IStore
 {
     // instance variables
-
+    private List<Item> inventoryArrList = new ArrayList<Item>();
+    private List<Staff> staffArrList = new ArrayList<Staff>();
 
     // constructor
     public Store()
     {
-
+        takeAction();
     }
 
     public List<Item> getItemsFromFile()
     {
-        List<Item> inventoryArrList = new ArrayList<Item>();
+
         try {
             // use FileUtils
             inventoryArrList = FileUtils.readInventoryFromFile();
@@ -36,7 +37,16 @@ public class Store implements IStore
 
     public List<Staff> getStaffFromFile()
     {
+        try {
+            // use FileUtils
+            staffArrList = FileUtils.readStaffFromFile();
 
+        } catch(IOException e)
+        {
+            e.printStackTrace();
+            System.exit(1);
+        }
+        return staffArrList;
     }
 
     public void saveItemsFromFile()
@@ -51,6 +61,12 @@ public class Store implements IStore
 
     public void takeAction()
     {
+        // getting Array Lists filled with inventory and staff
+        getItemsFromFile();
+        getStaffFromFile();
+
+        // read the input file
+
 
     }
 }

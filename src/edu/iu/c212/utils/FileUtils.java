@@ -24,6 +24,7 @@ public class FileUtils {
         // TODO
         Scanner in = new Scanner(inventoryFile);
         ArrayList itemLines = new ArrayList<Item>();
+
         in.nextLine();
         while (in.hasNextLine()) {
             String[] splitLine = in.nextLine().split(",");
