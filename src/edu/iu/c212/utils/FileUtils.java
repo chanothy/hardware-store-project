@@ -59,10 +59,11 @@ public class FileUtils {
         // TODO
         ArrayList inv = new ArrayList<String>();
         for (int i = 0; i<items.size(); i++) {
-            inv.add(items.get(i).getName() + "," + items.get(i).getPrice() + "," + items.get(i).getQuantity() + "," + items.get(i).getAisleNum());
+            inv.add("'" + items.get(i).getName() + "'," + (int) items.get(i).getPrice() + "," + items.get(i).getQuantity() + "," + items.get(i).getAisleNum());
 //            System.out.println(staff.get(i));
         }
-        PrintWriter out = new PrintWriter(staffAvailabilityFile);
+        PrintWriter out = new PrintWriter(inventoryFile);
+        out.println("// itemName,itemCost,itemQuantity,itemAisle test");
         for (int i = 0; i < inv.size(); i++) {
             System.out.println(inv.get(i));
             out.println(inv.get(i));
