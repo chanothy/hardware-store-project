@@ -49,8 +49,6 @@ public class SawPrimePlanks {
         for (int i = 0; i<howMany; i++) {
             plankArray.add(primeLen);
         }
-
-
         return plankArray;
     }
 

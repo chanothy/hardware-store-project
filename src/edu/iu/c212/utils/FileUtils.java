@@ -9,8 +9,7 @@ import java.util.Scanner;
 import java.io.PrintWriter;
 import java.util.Stack;
 
-// comment
-public class FileUtilss {
+public class FileUtils {
     private static File inputFile = new File("src/edu/iu/c212/resources/input.txt");
     private static File outputFile = new File("src/edu/iu/c212/resources/output.txt");
     private static File inventoryFile = new File("src/edu/iu/c212/resources/inventory.txt");
