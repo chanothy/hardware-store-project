@@ -25,7 +25,6 @@ public class Store implements IStore
 
     public List<Item> getItemsFromFile()
     {
-
         try {
             // use FileUtils
             inventoryArrList = FileUtils.readInventoryFromFile();
@@ -66,7 +65,7 @@ public class Store implements IStore
 
     public void saveStaffFromFile()
     {
-        try{
+        try {
             // use file utils
             FileUtils.writeStaffToFile(staffArrList);
         }catch(IOException e)
@@ -124,7 +123,7 @@ public class Store implements IStore
                     String last = inFile.next();
                     System.out.println(last);
                     String fullName = first + " " + last;
-
+                    fullName.replaceAll("'", "");
                     System.out.println(fullName);
 
 
@@ -142,9 +141,13 @@ public class Store implements IStore
                     {
                         System.out.println("ERROR: " +  fullName + " cannot be found.");
                     }
+                    saveStaffFromFile();
                 }
                 else if(command.equals("HIRE"))
                 {
+                    Staff newStaff = new Staff("Lewis hamilton", 35, "G", "M.T.W.T.F.SAT");
+                    staffArrList.add(newStaff);
+                    saveStaffFromFile();
 
                 }
                 else if(command.equals("PROMOTE"))
