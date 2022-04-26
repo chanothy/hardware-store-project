@@ -87,10 +87,10 @@ public class FileUtils {
         out.close();
     }
 
-//    public static List<String> readCommandsFromFile() throws IOException {
-//        // TODO
-//        return null;
-//    }
+    public static List<String> readCommandsFromFile() throws IOException {
+        // TODO
+        return null;
+    }
 //
 //    public static void writeStoreScheduleToFile(List<String> lines) {
 //        // TODO
