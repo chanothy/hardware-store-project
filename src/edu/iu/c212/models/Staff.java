@@ -70,7 +70,7 @@ public class Staff
     }
 
     // firing method
-    public static void fire(String staffName) throws IOException {
+    public static ArrayList fire(String staffName) throws IOException {
         List newStaff = FileUtils.readStaffFromFile();
         ArrayList updateStaff = new ArrayList<Staff>();
         for (int i = 0; i<newStaff.size(); i++) {
@@ -81,8 +81,9 @@ public class Staff
                 updateStaff.add(newStaff.get(i));
             }
         }
-        FileUtils.writeStaffToFile(updateStaff);
         FileUtils.writeLineToOutputFile(staffName + " was fired");
+        return updateStaff;
+//        FileUtils.writeStaffToFile(updateStaff);
 
     }
 
@@ -93,23 +94,23 @@ public class Staff
         for (int i = 0; i<newStaff.size(); i++) {
             if (((Staff) newStaff.get(i)).getName().equals(staffName)) {
                 updateStaff.add(new Staff(staffName, ((Staff) newStaff.get(i)).getAge(), role, ((Staff) newStaff.get(i)).getAvailability()));
+                String fullRole;
+                if (role.equals("C")) {
+                    fullRole = "Cashier";
+                }
+                else if (role.equals("M")) {
+                    fullRole = "Manager";
+                }
+                else {
+                    fullRole = "Gardener";
+                }
+                FileUtils.writeStaffToFile(updateStaff);
+                FileUtils.writeLineToOutputFile(staffName + " was promoted to " + fullRole);
             }
             else {
                 updateStaff.add(newStaff.get(i));
             }
         }
-        String fullRole;
-        if (role.equals("C")) {
-            fullRole = "Cashier";
-        }
-        else if (role.equals("M")) {
-            fullRole = "Manager";
-        }
-        else {
-            fullRole = "Gardener";
-        }
-        FileUtils.writeStaffToFile(updateStaff);
-        FileUtils.writeLineToOutputFile(staffName + " was promoted to " + fullRole);
     }
 
     public static void test() throws IOException{
