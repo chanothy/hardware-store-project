@@ -54,12 +54,25 @@ public class Store implements IStore
 
     public void saveItemsFromFile()
     {
-
+        try
+        {
+            // use file utils
+            FileUtils.writeInventoryToFile(inventoryArrList);
+        } catch(IOException e)
+        {
+            e.printStackTrace();
+        }
     }
 
     public void saveStaffFromFile()
     {
-
+        try{
+            // use file utils
+            FileUtils.writeStaffToFile(staffArrList);
+        }catch(IOException e)
+        {
+            e.printStackTrace();
+        }
     }
 
     public void takeAction()
