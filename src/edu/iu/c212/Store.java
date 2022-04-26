@@ -145,9 +145,15 @@ public class Store implements IStore
                 }
                 else if(command.equals("HIRE"))
                 {
-                    Staff newStaff = new Staff("Lewis hamilton", 35, "G", "M.T.W.T.F.SAT");
-                    staffArrList.add(newStaff);
-                    saveStaffFromFile();
+                    try {
+                        //Staff newStaff = new Staff("Lewis hamilton", 35, "G", "M.T.W.T.F.SAT");
+                        ArrayList<Staff> newStaff = Staff.hire("Lewis hamilton", 35, "G", "M.T.W.T.F.SAT");
+                        this.staffArrList = newStaff;
+                        saveStaffFromFile();
+                    }catch(IOException e)
+                    {
+                        e.printStackTrace();
+                    }
 
                 }
                 else if(command.equals("PROMOTE"))
