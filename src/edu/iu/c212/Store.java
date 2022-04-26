@@ -103,14 +103,15 @@ public class Store implements IStore
                     // to do:
                     // read full name from input.txt
                     // check staffArrList to see if name is in list
-                    inFile.useDelimiter("[^a-zA-z\s]");
+
+
                     String first = inFile.next();
                     System.out.println(first);
 
-                    inFile.useDelimiter("[^a-zA-z\\s]");
                     String last = inFile.next();
                     System.out.println(last);
                     String fullName = first + " " + last;
+
                     System.out.println(fullName);
 
 
@@ -139,7 +140,8 @@ public class Store implements IStore
                 }
                 else if(command.equals("SCHEDULE"))
                 {
-
+                    StaffScheduler staffScheduler = new StaffScheduler();
+                    staffScheduler.createSchedule((ArrayList)staffArrList);
                 }
                 else if(command.equals("SAW"))
                 {

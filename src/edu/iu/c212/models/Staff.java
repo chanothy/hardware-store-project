@@ -122,7 +122,4 @@ public class Staff
 //        System.out.println(FileUtils.readInventoryFromFile().get(1).getName());
     }
 
-    public static void main(String[] args) throws IOException{
-        test();
-    }
 }

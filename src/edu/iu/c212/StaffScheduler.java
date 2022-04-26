@@ -1,6 +1,7 @@
 package edu.iu.c212;
 
 import edu.iu.c212.models.Staff;
+import edu.iu.c212.utils.FileUtils;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -11,42 +12,34 @@ import java.util.Scanner;
 public class StaffScheduler
 {
     // instance variables
-    private static ArrayList<StaffScheduler> staffAvailability =  new ArrayList<StaffScheduler>();
-    private static ArrayList<String> shifts = new ArrayList<>();
-    private static ArrayList<String> outSchedule = new ArrayList<>();
-    private String name;
-    private int age;
-    private String position;
-    private String daysAvailable;
+    private static ArrayList<String[]> shifts = new ArrayList<>();
 
-    // could make staff scheduler with input as an array list object and create a constructor
-    public StaffScheduler(String name, int age, String position, String days)
+    // constructor
+    public StaffScheduler()
     {
-            this.name = name;
-            this.age = age;
-            this.position = position;
-            this.daysAvailable = days;
+
     }
 
-    // method to read in the data frm staff availability and add it into the arrayList staffAvailability
-    public static void readStaffAvailability(String filePath) throws FileNotFoundException
+    // method to read shift schedule input
+    private static ArrayList<String[]> readShiftScheduler() throws FileNotFoundException
     {
         // scanning in the patient file and adding it to the array list
         try {
-            File patientFile = new File(filePath);
-            Scanner inFile = new Scanner(patientFile);
+            File scheduleFile = new File("src/edu/iu/c212/resources/shift_schedules_IN.txt");
+            Scanner inFile = new Scanner(scheduleFile);
+
             while (inFile.hasNext()) {
-                String fileFirst = inFile.next();
-                String fileLast = inFile.next();
-                int fileAge = inFile.nextInt();
-                String filePosition = inFile.next();
-                String fileDays = inFile.next();
+                String day = inFile.next();
+                int opens = inFile.nextInt();
+                int closes = inFile.nextInt();
 
-                String fileName = fileFirst + " " + fileLast;
+                // take opening and closing hours and get how long the shift is
+                double hours = closes - opens;
+                String returnHours = Double.toString(hours);
 
-
-                StaffScheduler  newStaffMember= new StaffScheduler(fileName, fileAge, filePosition, fileDays);
-                staffAvailability.add(newStaffMember);
+                // add day and hours to return array list
+                String[] tempArr = {day, returnHours};
+                shifts.add(tempArr);
 
             }
             inFile.close();
@@ -54,49 +47,24 @@ public class StaffScheduler
         catch(FileNotFoundException e)
         {
             e.printStackTrace();
+            System.exit(1);
         }
+        return shifts;
     }
 
-    // creates an array list for the schedule that I need to fill
-    public static void readShiftSchedules(String filePath) throws FileNotFoundException
+    // schedule employees --> where scheduling logic goes
+    public static void createSchedule(ArrayList<Staff> staffList)
     {
-        // scanning in the patient file and adding it to the array list
+        // read in shift schedule
         try {
-            File patientFile = new File(filePath);
-            Scanner inFile = new Scanner(patientFile);
-            while (inFile.hasNext()) {
-                String fileDay = inFile.next();
-                int fileStart = inFile.nextInt();
-                int fileEnd = inFile.nextInt();
-
-
-                String newSchedule= (fileDay +" "+  fileStart +" "+ fileEnd);
-                shifts.add(newSchedule);
-
-            }
-            inFile.close();
-        }
-        catch(FileNotFoundException e)
+            readShiftScheduler();
+        } catch(FileNotFoundException e)
         {
             e.printStackTrace();
+            System.exit(1);
         }
-    }
 
-
-    // method calculates total hours that need to be scheduled
-    //public static int[] totalHours()
-    //{
-
-    //}
-
-    // schedule employees
-    public static void createSchedule()
-    {
-
-    }
-
-    public static void main(String[] args)
-    {
+        //
 
     }
 
