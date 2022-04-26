@@ -52,7 +52,7 @@ public class Staff
 
 
     // hiring method
-    public static void hire(String staffName, int age, String role, String availability) throws IOException {
+    public static ArrayList hire(String staffName, int age, String role, String availability) throws IOException {
         List newStaff = FileUtils.readStaffFromFile();
         newStaff.add(new Staff(staffName,age,role,availability));
         String fullRole = "";
@@ -65,8 +65,9 @@ public class Staff
         else {
             fullRole = "Gardener";
         }
-        FileUtils.writeStaffToFile(newStaff);
-        FileUtils.writeLineToOutputFile(staffName + " has been hired as a " + fullRole);
+        return (ArrayList) newStaff;
+//        FileUtils.writeStaffToFile(newStaff);
+//        FileUtils.writeLineToOutputFile(staffName + " has been hired as a " + fullRole);
     }
 
     // firing method
@@ -81,7 +82,7 @@ public class Staff
                 updateStaff.add(newStaff.get(i));
             }
         }
-        FileUtils.writeLineToOutputFile(staffName + " was fired");
+//        FileUtils.writeLineToOutputFile(staffName + " was fired");
         return updateStaff;
 //        FileUtils.writeStaffToFile(updateStaff);
 
