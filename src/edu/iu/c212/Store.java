@@ -86,6 +86,7 @@ public class Store implements IStore
             {
                 String[] tester = listInput.get(i).split(";");
 
+                                                                        // FOR THESE, DON'T FORGET TO FileUtils.writeLineToOutputFile();************************************
                 if (tester[0].equals("ADD")) {
 
                 } else if (tester[0].equals("COST")) {
@@ -116,7 +117,7 @@ public class Store implements IStore
 
                 } else if (tester[0].equals("PROMOTE")) {
 
-                } else if (tester[0].equals("SCHEDULE"))
+                } else if (tester[0].equals("SCHEDULE"))               // LOOK AT TO CHECK THAT PEOPLE WHO WERE JUST HIRED GOT ADDED TO THE SCHEDULE***************************************
                 {
                     StaffScheduler newSchedule = new StaffScheduler();
                     try {
