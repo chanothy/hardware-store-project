@@ -56,7 +56,7 @@ public class Item
         List items = FileUtils.readInventoryFromFile();
         for (int i = 0; i< items.size(); i++) {
             if (((Item)items.get(i)).getName().equals(itemName)) {
-                FileUtils.writeLineToOutputFile(itemName + ":$" + Integer.toString(((int)((Item)items.get(i)).getPrice())));
+                FileUtils.writeLineToOutputFile(itemName + ": $" + Integer.toString(((int)((Item)items.get(i)).getPrice())));
             }
         }
 //        FileUtils.writeLineToOutputFile("Error: This " + itemName + " cannot be found.");

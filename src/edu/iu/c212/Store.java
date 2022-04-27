@@ -120,11 +120,51 @@ public class Store implements IStore
                         ArrayList<Staff> newStaff = Staff.hire(tester[1], Integer.parseInt(tester[2]), tester[3], tester[4]);
                         this.staffArrList = newStaff;
                         saveStaffFromFile();
+
+                        String role = "";
+                        if(tester[3].equals("M"))
+                        {
+                            role = "Manager";
+                        }
+                        else if(tester[3].equals("C"))
+                        {
+                            role = "Cashier";
+                        }
+                        else if(tester[3].equals("G"))
+                        {
+                            role = "Gardening Expert";
+                        }
+                        FileUtils.writeLineToOutputFile(tester[1] + " has been hired as a " + role);
+
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
 
                 } else if (tester[0].equals("PROMOTE")) {
+
+                    try {
+                        ArrayList<Staff> newStaff = Staff.promote(tester[1], tester[2]);
+                        this.staffArrList = newStaff;
+                        saveStaffFromFile();
+
+                        String role = "";
+                        if(tester[2].equals("M"))
+                        {
+                            role = "Manager";
+                        }
+                        else if(tester[2].equals("C"))
+                        {
+                            role = "Cashier";
+                        }
+                        else if(tester[2].equals("G"))
+                        {
+                            role = "Gardening Expert";
+                        }
+                        FileUtils.writeLineToOutputFile(tester[1] + " was promoted to " + role);
+
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
 
                 } else if (tester[0].equals("SCHEDULE"))               // LOOK AT TO CHECK THAT PEOPLE WHO WERE JUST HIRED GOT ADDED TO THE SCHEDULE***************************************
                 {

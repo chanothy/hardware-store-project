@@ -33,5 +33,15 @@ Planks sawed.
 Thank you for visiting High’s Hardware and Gardening!
 
 // Actual Output
-[edu.iu.c212.models.Staff@246b179d, edu.iu.c212.models.Staff@7a07c5b4, edu.iu.c212.models.Staff@26a1ab54, edu.iu.c212.models.Staff@3d646c37, edu.iu.c212.models.Staff@41cf53f9, edu.iu.c212.models.Staff@5a10411, edu.iu.c212.models.Staff@2ef1e4fa, edu.iu.c212.models.Staff@306a30c7, edu.iu.c212.models.Staff@b81eda8, edu.iu.c212.models.Staff@68de145, edu.iu.c212.models.Staff@27fa135a, edu.iu.c212.models.Staff@46f7f36a] was fired
-[edu.iu.c212.models.Staff@69d0a921, edu.iu.c212.models.Staff@446cdf90, edu.iu.c212.models.Staff@799f7e29, edu.iu.c212.models.Staff@4b85612c, edu.iu.c212.models.Staff@277050dc, edu.iu.c212.models.Staff@5c29bfd, edu.iu.c212.models.Staff@7aec35a, edu.iu.c212.models.Staff@67424e82, edu.iu.c212.models.Staff@42110406, edu.iu.c212.models.Staff@531d72ca, edu.iu.c212.models.Staff@22d8cfe0, edu.iu.c212.models.Staff@579bb367, edu.iu.c212.models.Staff@1de0aca6] was fired
+Joshua Filler was fired
+Lewis hamilton has been hired as a Gardening Expert
+Lewis hamilton was promoted to Manager
+Will Boland was fired
+Michael Scott has been hired as a Cashier
+Michael Scott was promoted to Gardening Expert
+Joshua Filler was fired
+Lewis hamilton has been hired as a Gardening Expert
+Lewis hamilton was promoted to Manager
+Will Boland was fired
+Michael Scott has been hired as a Cashier
+Michael Scott was promoted to Gardening Expert

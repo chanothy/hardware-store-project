@@ -9,7 +9,6 @@ QUANTITY 'Paint Can'
 FIRE 'Joshua Filler'
 HIRE 'Lewis hamilton' 35 G M.T.F
 PROMOTE 'Lewis hamilton' M
-SCHEDULE
 SAW
 EXIT
 
@@ -25,5 +24,6 @@ QUANTITY 'Cutter'
 FIRE 'Will Boland'
 HIRE 'Michael Scott' 28 C T.W.S
 PROMOTE 'Michael Scott' G
+SCHEDULE
 SAW
 EXIT
