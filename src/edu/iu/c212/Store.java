@@ -105,37 +105,7 @@ public class Store implements IStore
                     } else if (lineArr[i].equals("QUANTITY")) {
 
                     } else if (lineArr[i].equals("FIRE")) {
-                        // match name in staffArrList to be fired
 
-                        // to do:
-                        // read full name from input.txt
-                        // check staffArrList to see if name is in list
-
-                    /*
-                    String first = inFile.next();
-                    System.out.println(first);
-                    String last = inFile.next();
-                    System.out.println(last);
-                    String fullName = first + " " + last;
-                    fullName.replaceAll("'", "");
-                    System.out.println(fullName);
-
-                    int arrSize = staffArrList.size();
-
-                    for(int i = 0; i < staffArrList.size(); i++)
-                    {
-                        if(staffArrList.get(i).getName().equals(fullName))
-                        {
-                            staffArrList.remove(staffArrList.get(i));
-                            System.out.println(fullName + " was fired.");
-                        }
-                    }
-                    if(arrSize == staffArrList.size())
-                    {
-                        System.out.println("ERROR: " +  fullName + " cannot be found.");
-                    }
-                    saveStaffFromFile();
-                     */
                     } else if (lineArr[i].equals("HIRE")) {
                         try {
                             ArrayList<Staff> newStaff = Staff.hire("Lewis hamilton", 35, "G", "M.T.W.T.F.SAT");
