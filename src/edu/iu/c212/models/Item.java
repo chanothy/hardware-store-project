@@ -51,8 +51,14 @@ public class Item
         return (ArrayList) newItems;
     }
 
-    public static void cost() {
-
+    public static String cost(String itemName) throws  IOException{
+        List items = FileUtils.readInventoryFromFile();
+        for (int i = 0; i< items.size(); i++) {
+            if (((Item)items.get(i)).getName().equals(itemName)) {
+                return Integer.toString(((int)((Item)items.get(i)).getPrice()));
+            }
+        }
+        return "Error: This item cannot be found.";
     }
 
 }
