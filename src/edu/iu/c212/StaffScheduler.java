@@ -145,8 +145,8 @@ public class StaffScheduler
             }
 
             outSchedule.add(tempStr);
-            //System.out.println(tempStr);
         }
+        /*
         for(int i = 0; i < managers.size(); i++)
         {
             System.out.println(managers.get(i).getName() + " " + managers.get(i).getHoursAssigned());
@@ -160,6 +160,8 @@ public class StaffScheduler
             System.out.println(gardeningExperts.get(i).getName() + " " + gardeningExperts.get(i).getHoursAssigned());
         }
 
+         */
+        writeStoreScheduleToFile(outSchedule);
     }
 
 }
