@@ -52,8 +52,7 @@ public class Store implements IStore
 
     public void saveItemsFromFile()
     {
-        try
-        {
+        try {
           // use file utils
             FileUtils.writeInventoryToFile(inventoryArrList);
         } catch(IOException e)
@@ -82,44 +81,58 @@ public class Store implements IStore
         // read the input file
         try {
             List<String> listInput = FileUtils.readCommandsFromFile();
-            System.out.println(listInput.get(0));
+            //System.out.println(listInput.get(0));
 
             for(int i = 0; i < listInput.size(); i++)
             {
+                String[] tester = listInput.get(i).split(";");
+                //System.out.println("Tester 1: " +tester[1]);
 
-                if (listInput.get(0).equals("ADD")) {
+                if (tester[0].equals("ADD")) {
 
-                } else if (listInput.get(0).equals("COST")) {
+                } else if (tester[0].equals("COST")) {
 
-                } else if (listInput.get(0).equals("FIND")) {
+                } else if (tester[0].equals("FIND")) {
 
-                } else if (listInput.get(0).equals("SELL")) {
+                } else if (tester[0].equals("SELL")) {
 
-                } else if (listInput.get(0).equals("QUANTITY")) {
+                } else if (tester[0].equals("QUANTITY")) {
 
-                } else if (listInput.get(0).equals("FIRE")) {
-
-                } else if (listInput.get(0).equals("HIRE")) {
+                } else if (tester[0].equals("FIRE")) {
                     try {
-                        ArrayList<Staff> newStaff = Staff.hire("Lewis hamilton", 35, "G", "M.T.W.T.F.SAT");
+                        ArrayList<Staff> newStaff = Staff.fire(tester[1]);
                         this.staffArrList = newStaff;
                         saveStaffFromFile();
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
 
-                } else if (listInput.get(0).equals("PROMOTE")) {
+                } else if (tester[0].equals("HIRE")) {
+                    try {
+                        ArrayList<Staff> newStaff = Staff.hire(tester[1], Integer.parseInt(tester[2]), tester[3], tester[4]);
+                        this.staffArrList = newStaff;
+                        saveStaffFromFile();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
 
-                } else if (listInput.get(0).equals("SCHEDULE")) {
+                } else if (tester[0].equals("PROMOTE")) {
+
+                } else if (tester[0].equals("SCHEDULE")) {
                     StaffScheduler staffScheduler = new StaffScheduler();
                     staffScheduler.createSchedule((ArrayList) staffArrList);
-                } else if (listInput.get(0).equals("SAW")) {
+                } else if (tester[0].equals("SAW")) {
 
-                } else if (listInput.get(0).equals("EXIT")) {
+                } else if (tester[0].equals("EXIT")) {
 
                 } else {
                         System.out.println("Your command was not recognized.");
                 }
+            }
+
+            for(int i = 0; i < listInput.size(); i++)
+            {
+                System.out.println(listInput.get(i));
             }
 
         }
@@ -128,6 +141,5 @@ public class Store implements IStore
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 }

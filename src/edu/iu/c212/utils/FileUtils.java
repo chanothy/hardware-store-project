@@ -151,7 +151,7 @@ public class FileUtils {
 //    }
 //
 
-    // updates outputfile
+    // updates output file
     public static void writeLineToOutputFile(String line) throws IOException{
         // TODO
         Scanner in = new Scanner(outputFile);
