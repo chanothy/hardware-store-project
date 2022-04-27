@@ -145,7 +145,19 @@ public class StaffScheduler
             }
 
             outSchedule.add(tempStr);
-            System.out.println(tempStr);
+            //System.out.println(tempStr);
+        }
+        for(int i = 0; i < managers.size(); i++)
+        {
+            System.out.println(managers.get(i).getName() + " " + managers.get(i).getHoursAssigned());
+        }
+        for(int i = 0; i < cashiers.size(); i++)
+        {
+            System.out.println(cashiers.get(i).getName() + " " + cashiers.get(i).getHoursAssigned());
+        }
+        for(int i = 0; i < gardeningExperts.size(); i++)
+        {
+            System.out.println(gardeningExperts.get(i).getName() + " " + gardeningExperts.get(i).getHoursAssigned());
         }
 
     }

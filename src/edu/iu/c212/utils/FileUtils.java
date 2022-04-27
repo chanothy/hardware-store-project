@@ -46,6 +46,10 @@ public class FileUtils {
         ArrayList staffLines = new ArrayList<Staff>();
         while (in.hasNextLine()) {
             String[] splitLine = ((String) in.nextLine()).split(" ");
+
+            // testing for the error
+            System.out.println(splitLine[4]);
+
             String name = splitLine[0] + " " + splitLine[1];
             Integer age = Integer.parseInt(splitLine[2]);
             String job = splitLine[3];
