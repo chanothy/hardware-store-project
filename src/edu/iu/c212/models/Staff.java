@@ -5,6 +5,7 @@ import edu.iu.c212.utils.FileUtils;
 import javax.swing.plaf.FileChooserUI;
 import java.awt.image.AreaAveragingScaleFilter;
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -89,7 +90,7 @@ public class Staff
     }
 
     // promotion method
-    public static void promote(String staffName, String role) throws IOException {
+    public static ArrayList promote(String staffName, String role) throws IOException {
         List newStaff = FileUtils.readStaffFromFile();
         ArrayList updateStaff = new ArrayList<Staff>();
         for (int i = 0; i<newStaff.size(); i++) {
@@ -105,13 +106,14 @@ public class Staff
                 else {
                     fullRole = "Gardener";
                 }
-                FileUtils.writeStaffToFile(updateStaff);
-                FileUtils.writeLineToOutputFile(staffName + " was promoted to " + fullRole);
+//                FileUtils.writeStaffToFile(updateStaff);
+//                FileUtils.writeLineToOutputFile(staffName + " was promoted to " + fullRole);
             }
             else {
                 updateStaff.add(newStaff.get(i));
             }
         }
+        return updateStaff;
     }
 
     public static void test() throws IOException{
