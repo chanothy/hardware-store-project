@@ -118,10 +118,13 @@ public class Store implements IStore
 
                 } else if (tester[0].equals("PROMOTE")) {
 
-                } else if (tester[0].equals("SCHEDULE")) {
-                    StaffScheduler staffScheduler = new StaffScheduler();
-                    staffScheduler.createSchedule((ArrayList) staffArrList);
-                } else if (tester[0].equals("SAW")) {
+                } else if (tester[0].equals("SCHEDULE"))
+                {
+                    StaffScheduler newSchedule = new StaffScheduler();
+                    newSchedule.createSchedule((ArrayList)staffArrList);
+
+                }
+                else if (tester[0].equals("SAW")) {
 
                 } else if (tester[0].equals("EXIT")) {
 

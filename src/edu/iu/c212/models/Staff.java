@@ -49,10 +49,20 @@ public class Staff
 
     public boolean checkAvailability(String day)
     {
-        String[] dayAvailable =  availability.split(".");
+        System.out.println("PRINT AVAIABILITY " + availability);
+
+
+        availability.replaceAll(".", " ");
+        String[] dayAvailable = availability.split(" ");
+
+        System.out.println("LENGTH " + dayAvailable.length);
+        System.out.println("dkfebgkjewueienvjefbvkjfbvfdavkjdfbvijdf" + dayAvailable[0]);
+
 
         for(int i = 0; i < dayAvailable.length; i++)
         {
+            System.out.println("dkfebgkjewueienvjefbvkjfbvfdavkjdfbvijdf" + dayAvailable[i]);
+
             if(dayAvailable[i].equals(day))
             {
                 return true;

@@ -13,6 +13,7 @@ public class StaffScheduler
 {
     // instance variables
     private static ArrayList<String[]> shifts = new ArrayList<>();
+    private static ArrayList<String> outSchedule = new ArrayList<>();
 
     // constructor
     public StaffScheduler()
@@ -64,7 +65,75 @@ public class StaffScheduler
             System.exit(1);
         }
 
+        // arr of managers
+        ArrayList<Staff> managers = new ArrayList<>();
+        for(int i = 0; i < staffList.size(); i++)
+        {
+            if(staffList.get(i).getRole().equals("M"))
+            {
+                managers.add(staffList.get(i));
+            }
+        }
 
+        // arr of cashiers
+        ArrayList<Staff> cashiers = new ArrayList<>();
+        for(int i = 0; i < staffList.size(); i++)
+        {
+            if(staffList.get(i).getRole().equals("C"))
+            {
+                cashiers.add(staffList.get(i));
+            }
+        }
+
+        // arr of gardening experts
+        ArrayList<Staff> gardeningExperts = new ArrayList<>();
+        for(int i = 0; i < staffList.size(); i++) {
+            if (staffList.get(i).getRole().equals("G")) {
+                gardeningExperts.add(staffList.get(i));
+            }
+        }
+        for(int j = 0; j < shifts.size(); j++)
+        {
+            String[] dayHours = shifts.get(j);
+            String day = dayHours[0];
+            double hours = Double.parseDouble(dayHours[1]);
+            System.out.println("day: " + day);
+            System.out.println("hour: " + hours);
+
+            String tempStr;
+
+            tempStr = day;
+
+            // schedule managers
+            for (int i = 0; i < managers.size(); i++)
+            {
+                if(managers.get(i).checkAvailability(day))
+                {
+                    tempStr = tempStr + "(" + managers.get(i).getName() + ") ";
+                }
+            }
+
+            // schedule cashiers
+            for (int i = 0; i < cashiers.size(); i++)
+            {
+                if(cashiers.get(i).checkAvailability(day))
+                {
+                    tempStr = tempStr + "(" + cashiers.get(i).getName() + ") ";
+                }
+            }
+
+            // schedule gardening experts
+            for (int i = 0; i < gardeningExperts.size(); i++)
+            {
+                if(gardeningExperts.get(i).checkAvailability(day))
+                {
+                        tempStr = tempStr + "(" + gardeningExperts.get(i).getName() + ") ";
+                }
+            }
+
+            outSchedule.add(tempStr);
+            System.out.println(tempStr);
+        }
 
     }
 
