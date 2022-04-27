@@ -35,7 +35,7 @@ public class StaffScheduler
                 int closes = inFile.nextInt();
 
                 // take opening and closing hours and get how long the shift is
-                double hours = closes - opens;
+                double hours = (closes - opens) / 100;
                 String returnHours = Double.toString(hours);
 
                 // add day and hours to return array list
@@ -109,7 +109,11 @@ public class StaffScheduler
             {
                 if(managers.get(i).checkAvailability(day))
                 {
-                    tempStr = tempStr + "(" + managers.get(i).getName() + ") ";
+                    tempStr = tempStr + " (" + managers.get(i).getName() + ")";
+                    managers.get(i).setHoursAssigned(hours);
+                    // re-sort manager
+
+                    break;
                 }
             }
 
@@ -118,7 +122,7 @@ public class StaffScheduler
             {
                 if(cashiers.get(i).checkAvailability(day))
                 {
-                    tempStr = tempStr + "(" + cashiers.get(i).getName() + ") ";
+                    tempStr = tempStr + " (" + cashiers.get(i).getName() + ")";
                 }
             }
 
@@ -127,7 +131,7 @@ public class StaffScheduler
             {
                 if(gardeningExperts.get(i).checkAvailability(day))
                 {
-                        tempStr = tempStr + "(" + gardeningExperts.get(i).getName() + ") ";
+                        tempStr = tempStr + " (" + gardeningExperts.get(i).getName() + ")";
                 }
             }
 

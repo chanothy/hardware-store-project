@@ -10,7 +10,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class Staff
+
+public class Staff implements Comparable
 {
 
     private String fullName;
@@ -47,21 +48,14 @@ public class Staff
         return availability;
     }
 
+    public double getHoursAssigned(){return hoursAssigned;}
+
     public boolean checkAvailability(String day)
     {
-        System.out.println("PRINT AVAIABILITY " + availability);
-
-
-        availability.replaceAll(".", " ");
-        String[] dayAvailable = availability.split(" ");
-
-        System.out.println("LENGTH " + dayAvailable.length);
-        System.out.println("dkfebgkjewueienvjefbvkjfbvfdavkjdfbvijdf" + dayAvailable[0]);
-
+        String[] dayAvailable = availability.split("\\.");
 
         for(int i = 0; i < dayAvailable.length; i++)
         {
-            System.out.println("dkfebgkjewueienvjefbvkjfbvfdavkjdfbvijdf" + dayAvailable[i]);
 
             if(dayAvailable[i].equals(day))
             {
@@ -77,7 +71,14 @@ public class Staff
         this.hoursAssigned = this.hoursAssigned + n;
     }
 
+    // re sort
+    @Override
+    public int compareTo(Object otherStaff)
+    {
+        int otherHours = (int)((Staff)otherStaff).getHoursAssigned();
+        return (int)this.hoursAssigned - otherHours;
 
+    }
 
     // hiring method
     public static ArrayList hire(String staffName, int age, String role, String availability) throws IOException {
