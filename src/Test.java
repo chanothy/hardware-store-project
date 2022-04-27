@@ -5,6 +5,6 @@ import java.io.IOException;
 public class Test {
 
     public static void main(String[] args) throws IOException {
-        Item.cost("Cotton Hoe");
+        Item.find("Multi Bit Ratchojeting");
     }
 }

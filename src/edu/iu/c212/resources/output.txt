@@ -33,3 +33,5 @@ Planks sawed.
 Thank you for visiting High’s Hardware and Gardening!
 
 // Actual Output
+Performing store lookup for Multi Bit Ratcheting
+Error: Multi Bit Ratchojeting cannot be found.

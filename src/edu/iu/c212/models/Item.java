@@ -1,5 +1,6 @@
 package edu.iu.c212.models;
 
+import edu.iu.c212.programs.StoreMapDisplay;
 import edu.iu.c212.utils.FileUtils;
 
 import java.awt.image.AreaAveragingScaleFilter;
@@ -59,6 +60,18 @@ public class Item
             }
         }
 //        FileUtils.writeLineToOutputFile("Error: This " + itemName + " cannot be found.");
+    }
+
+    public static void find(String itemName) throws IOException{
+        List items = FileUtils.readInventoryFromFile();
+        for (int i = 0; i< items.size(); i++) {
+            if (((Item)items.get(i)).getName().equals(itemName)) {
+                StoreMapDisplay.display((Item) items.get(i));
+                FileUtils.writeLineToOutputFile("Performing store lookup for " + itemName);
+                return;
+            }
+        }
+        FileUtils.writeLineToOutputFile("Error: " + itemName + " cannot be found.");
     }
 
 }

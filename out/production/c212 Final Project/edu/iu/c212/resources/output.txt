@@ -33,9 +33,4 @@ Planks sawed.
 Thank you for visiting High’s Hardware and Gardening!
 
 // Actual Output
-Addmanda Smith was promoted to Cashier
-Tim Chan has been hired as a Manager
-Tim Chan was fired
-Jason Henderson was fired
-Lewis hamilton
-Lewis hamilton
+Performing store lookup for Multi Bit Ratcheting
