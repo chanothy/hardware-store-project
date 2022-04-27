@@ -99,7 +99,13 @@ public class Store implements IStore
 
                 } else if (tester[0].equals("COST")) {
 
-                } else if (tester[0].equals("FIND")) {
+                } else if (tester[0].equals("FIND"))
+                {
+                    try {
+                        Item.find(tester[1]);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
 
                 } else if (tester[0].equals("SELL")) {
 
