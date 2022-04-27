@@ -1,4 +1,4 @@
-// itemName,itemCost,itemQuantity,itemAisle
+// itemName,itemCost,itemQuantity,itemAisle test
 'Hammer',30,2,3
 'Multi Bit Ratcheting',59,1,4
 'Paint cans',20,4,5
@@ -20,3 +20,7 @@
 'Wood',14,80,12
 'Water Nosel',18,24,11
 'Leaf Blower',91,18,8
+'Cordless Screwdriver',30,1,2
+'Garden Rakes',10,1,3
+'Cordless Screwdriver',30,1,2
+'Garden Rakes',10,1,3

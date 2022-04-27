@@ -110,6 +110,7 @@ public class Store implements IStore
                         ArrayList<Staff> newStaff = Staff.fire(tester[1]);
                         this.staffArrList = newStaff;
                         saveStaffFromFile();
+                        FileUtils.writeLineToOutputFile(tester[1] + " was fired");
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -119,7 +120,6 @@ public class Store implements IStore
                         ArrayList<Staff> newStaff = Staff.hire(tester[1], Integer.parseInt(tester[2]), tester[3], tester[4]);
                         this.staffArrList = newStaff;
                         saveStaffFromFile();
-                        FileUtils.writeLineToOutputFile(newStaff + " was fired");
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
