@@ -86,38 +86,30 @@ public class Store implements IStore
 
             while (i < listInput.size()) {
                 String line = listInput.get(i);
-                //ADD,Cordless Screwdriver,30,1,2
+                //ADD;Cordless Screwdriver;30;1;2
                 String[] lineArr = line.split(",");
-                System.out.println(lineArr[i]);
 
-
-                if(lineArr[i].equals("ADD"))
+                for(int j = 0; j < lineArr.length; j++)
                 {
+                    System.out.println(lineArr[j]);
 
-                }
-                else if(lineArr[i].equals("COST"))
-                {
 
-                }
-                else if(lineArr[i].equals("FIND"))
-                {
+                    if (lineArr[i].equals("ADD")) {
 
-                }
-                else if(lineArr[i].equals("SELL"))
-                {
+                    } else if (lineArr[i].equals("COST")) {
 
-                }
-                else if(lineArr[i].equals("QUANTITY"))
-                {
+                    } else if (lineArr[i].equals("FIND")) {
 
-                }
-                else if(lineArr[i].equals("FIRE"))
-                {
-                    // match name in staffArrList to be fired
+                    } else if (lineArr[i].equals("SELL")) {
 
-                    // to do:
-                    // read full name from input.txt
-                    // check staffArrList to see if name is in list
+                    } else if (lineArr[i].equals("QUANTITY")) {
+
+                    } else if (lineArr[i].equals("FIRE")) {
+                        // match name in staffArrList to be fired
+
+                        // to do:
+                        // read full name from input.txt
+                        // check staffArrList to see if name is in list
 
                     /*
                     String first = inFile.next();
@@ -144,39 +136,27 @@ public class Store implements IStore
                     }
                     saveStaffFromFile();
                      */
-                }
-                else if(lineArr[i].equals("HIRE"))
-                {
-                    try {
-                        ArrayList<Staff> newStaff = Staff.hire("Lewis hamilton", 35, "G", "M.T.W.T.F.SAT");
-                        this.staffArrList = newStaff;
-                        saveStaffFromFile();
-                    }catch(IOException e)
-                    {
-                        e.printStackTrace();
+                    } else if (lineArr[i].equals("HIRE")) {
+                        try {
+                            ArrayList<Staff> newStaff = Staff.hire("Lewis hamilton", 35, "G", "M.T.W.T.F.SAT");
+                            this.staffArrList = newStaff;
+                            saveStaffFromFile();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+
+                    } else if (lineArr[i].equals("PROMOTE")) {
+
+                    } else if (lineArr[i].equals("SCHEDULE")) {
+                        StaffScheduler staffScheduler = new StaffScheduler();
+                        staffScheduler.createSchedule((ArrayList) staffArrList);
+                    } else if (lineArr[i].equals("SAW")) {
+
+                    } else if (lineArr[i].equals("EXIT")) {
+
+                    } else {
+                        System.out.println("Your command was not recognized.");
                     }
-
-                }
-                else if(lineArr[i].equals("PROMOTE"))
-                {
-
-                }
-                else if(lineArr[i].equals("SCHEDULE"))
-                {
-                    StaffScheduler staffScheduler = new StaffScheduler();
-                    staffScheduler.createSchedule((ArrayList)staffArrList);
-                }
-                else if(lineArr[i].equals("SAW"))
-                {
-
-                }
-                else if(lineArr[i].equals("EXIT"))
-                {
-
-                }
-                else
-                {
-                    System.out.println("Your command was not recognized.");
                 }
                 i++;
             }
