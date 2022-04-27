@@ -87,7 +87,15 @@ public class Store implements IStore
                 String[] tester = listInput.get(i).split(";");
 
                                                                         // FOR THESE, DON'T FORGET TO FileUtils.writeLineToOutputFile();************************************
-                if (tester[0].equals("ADD")) {
+                if (tester[0].equals("ADD"))
+                {
+                    try
+                    {
+
+                    } catch()
+                    {
+
+                    }
 
                 } else if (tester[0].equals("COST")) {
 
