@@ -1,5 +1,12 @@
 package edu.iu.c212.models;
 
+import edu.iu.c212.utils.FileUtils;
+
+import java.awt.image.AreaAveragingScaleFilter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
 public class Item
 {
     // instance variables
@@ -38,8 +45,20 @@ public class Item
         return aisleNum;
     }
 
-    public static void cost() {
+    public static ArrayList add(String itemName, int cost, int itemQuantity, int itemAisle) throws IOException {
+        List newItems = FileUtils.readInventoryFromFile();
+        newItems.add(new Item(itemName,cost,itemQuantity,itemAisle));
+        return (ArrayList) newItems;
+    }
 
+    public static String cost(String itemName) throws  IOException{
+        List items = FileUtils.readInventoryFromFile();
+        for (int i = 0; i< items.size(); i++) {
+            if (((Item)items.get(i)).getName().equals(itemName)) {
+                return Integer.toString(((int)((Item)items.get(i)).getPrice()));
+            }
+        }
+        return "Error: This item cannot be found.";
     }
 
 }

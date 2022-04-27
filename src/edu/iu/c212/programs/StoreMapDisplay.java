@@ -39,5 +39,6 @@ public class StoreMapDisplay extends JPanel{
     public static void main(String[] args) throws IOException {
 //        display(FileUtils.readInventoryFromFile().get(0));
 
+
     }
 }
