@@ -77,7 +77,6 @@ public class Staff implements Comparable
     {
         int otherHours = (int)((Staff)otherStaff).getHoursAssigned();
         return (int)this.hoursAssigned - otherHours;
-
     }
 
     // hiring method

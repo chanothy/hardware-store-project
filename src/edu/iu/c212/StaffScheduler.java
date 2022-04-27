@@ -146,7 +146,7 @@ public class StaffScheduler
 
             outSchedule.add(tempStr);
         }
-        /*
+
         for(int i = 0; i < managers.size(); i++)
         {
             System.out.println(managers.get(i).getName() + " " + managers.get(i).getHoursAssigned());
@@ -160,8 +160,13 @@ public class StaffScheduler
             System.out.println(gardeningExperts.get(i).getName() + " " + gardeningExperts.get(i).getHoursAssigned());
         }
 
-         */
-        writeStoreScheduleToFile(outSchedule);
+         outSchedule.add(0,"DATE AND TIME WILL GO HERE");
+        try {
+            FileUtils.writeStoreScheduleToFile(outSchedule);
+        } catch (FileNotFoundException e)
+        {
+            e.printStackTrace();
+        }
     }
 
 }
