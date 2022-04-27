@@ -81,7 +81,7 @@ public class Store implements IStore
         // read the input file
         try {
             List<String> listInput = FileUtils.readCommandsFromFile();
-            //System.out.println(listInput.get(0));
+            //System.out.println(listInput.get(0));                             this seems to be working now
 
             for(int i = 0; i < listInput.size(); i++)
             {
