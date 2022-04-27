@@ -78,36 +78,40 @@ public class Store implements IStore
         // getting Array Lists filled with inventory and staff
         getItemsFromFile();
         getStaffFromFile();
-
+        int i = 0;
         // read the input file
         try {
-          File inputFile = new File("src/edu/iu/c212/resources/input.txt");
-            Scanner inFile = new Scanner(inputFile);
+            List<String> listInput = FileUtils.readCommandsFromFile();
+            System.out.println(listInput);
 
-            while (inFile.hasNextLine()) {
-                String command = inFile.next();
+            while (i < listInput.size()) {
+                String line = listInput.get(i);
+                //ADD,Cordless Screwdriver,30,1,2
+                String[] lineArr = line.split(",");
+                System.out.println(lineArr[i]);
 
-                if(command.equals("ADD"))
+
+                if(lineArr[i].equals("ADD"))
                 {
 
                 }
-                else if(command.equals("COST"))
+                else if(lineArr[i].equals("COST"))
                 {
 
                 }
-                else if(command.equals("FIND"))
+                else if(lineArr[i].equals("FIND"))
                 {
 
                 }
-                else if(command.equals("SELL"))
+                else if(lineArr[i].equals("SELL"))
                 {
 
                 }
-                else if(command.equals("QUANTITY"))
+                else if(lineArr[i].equals("QUANTITY"))
                 {
 
                 }
-                else if(command.equals("FIRE"))
+                else if(lineArr[i].equals("FIRE"))
                 {
                     // match name in staffArrList to be fired
 
@@ -115,16 +119,14 @@ public class Store implements IStore
                     // read full name from input.txt
                     // check staffArrList to see if name is in list
 
-
+                    /*
                     String first = inFile.next();
                     System.out.println(first);
-
                     String last = inFile.next();
                     System.out.println(last);
                     String fullName = first + " " + last;
                     fullName.replaceAll("'", "");
                     System.out.println(fullName);
-
 
                     int arrSize = staffArrList.size();
 
@@ -141,8 +143,9 @@ public class Store implements IStore
                         System.out.println("ERROR: " +  fullName + " cannot be found.");
                     }
                     saveStaffFromFile();
+                     */
                 }
-                else if(command.equals("HIRE"))
+                else if(lineArr[i].equals("HIRE"))
                 {
                     try {
                         ArrayList<Staff> newStaff = Staff.hire("Lewis hamilton", 35, "G", "M.T.W.T.F.SAT");
@@ -154,20 +157,20 @@ public class Store implements IStore
                     }
 
                 }
-                else if(command.equals("PROMOTE"))
+                else if(lineArr[i].equals("PROMOTE"))
                 {
 
                 }
-                else if(command.equals("SCHEDULE"))
+                else if(lineArr[i].equals("SCHEDULE"))
                 {
                     StaffScheduler staffScheduler = new StaffScheduler();
                     staffScheduler.createSchedule((ArrayList)staffArrList);
                 }
-                else if(command.equals("SAW"))
+                else if(lineArr[i].equals("SAW"))
                 {
 
                 }
-                else if(command.equals("EXIT"))
+                else if(lineArr[i].equals("EXIT"))
                 {
 
                 }
@@ -175,11 +178,14 @@ public class Store implements IStore
                 {
                     System.out.println("Your command was not recognized.");
                 }
+                i++;
             }
-            inFile.close();
+
         }
         catch(FileNotFoundException e)
         {
+            e.printStackTrace();
+        } catch (IOException e) {
             e.printStackTrace();
         }
 
