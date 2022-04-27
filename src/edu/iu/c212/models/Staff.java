@@ -42,7 +42,24 @@ public class Staff
     }
 
     // availability getter
-    public String getAvailability() { return availability; }
+    public String getAvailability()
+    {
+        return availability;
+    }
+
+    public boolean checkAvailability(String day)
+    {
+        String[] dayAvailable =  availability.split(".");
+
+        for(int i = 0; i < dayAvailable.length; i++)
+        {
+            if(dayAvailable[i].equals(day))
+            {
+                return true;
+            }
+        }
+        return false;
+    }
 
     // setting hours assigned
     public void setHoursAssigned(double n)

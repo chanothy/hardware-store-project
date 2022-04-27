@@ -57,14 +57,14 @@ public class StaffScheduler
     {
         // read in shift schedule
         try {
-            readShiftScheduler();
+            readShiftScheduler();  // [day, hours]
         } catch(FileNotFoundException e)
         {
             e.printStackTrace();
             System.exit(1);
         }
 
-        //
+
 
     }
 
