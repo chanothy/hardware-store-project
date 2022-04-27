@@ -78,62 +78,52 @@ public class Store implements IStore
         // getting Array Lists filled with inventory and staff
         getItemsFromFile();
         getStaffFromFile();
-        int i = 0;
+
         // read the input file
         try {
             List<String> listInput = FileUtils.readCommandsFromFile();
-            System.out.println(listInput);
+            System.out.println(listInput.get(0));
 
-            while (i < listInput.size()) {
-                String line = listInput.get(i);
-                //ADD;Cordless Screwdriver;30;1;2
-                String[] lineArr = line.split(",");
+            for(int i = 0; i < listInput.size(); i++)
+            {
 
-                for(int j = 0; j < lineArr.length; j++)
-                {
-                    System.out.println(lineArr[j]);
+                if (listInput.get(0).equals("ADD")) {
 
+                } else if (listInput.get(0).equals("COST")) {
 
-                    if (lineArr[i].equals("ADD")) {
+                } else if (listInput.get(0).equals("FIND")) {
 
-                    } else if (lineArr[i].equals("COST")) {
+                } else if (listInput.get(0).equals("SELL")) {
 
-                    } else if (lineArr[i].equals("FIND")) {
+                } else if (listInput.get(0).equals("QUANTITY")) {
 
-                    } else if (lineArr[i].equals("SELL")) {
+                } else if (listInput.get(0).equals("FIRE")) {
 
-                    } else if (lineArr[i].equals("QUANTITY")) {
-
-                    } else if (lineArr[i].equals("FIRE")) {
-
-                    } else if (lineArr[i].equals("HIRE")) {
-                        try {
-                            ArrayList<Staff> newStaff = Staff.hire("Lewis hamilton", 35, "G", "M.T.W.T.F.SAT");
-                            this.staffArrList = newStaff;
-                            saveStaffFromFile();
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
-
-                    } else if (lineArr[i].equals("PROMOTE")) {
-
-                    } else if (lineArr[i].equals("SCHEDULE")) {
-                        StaffScheduler staffScheduler = new StaffScheduler();
-                        staffScheduler.createSchedule((ArrayList) staffArrList);
-                    } else if (lineArr[i].equals("SAW")) {
-
-                    } else if (lineArr[i].equals("EXIT")) {
-
-                    } else {
-                        System.out.println("Your command was not recognized.");
+                } else if (listInput.get(0).equals("HIRE")) {
+                    try {
+                        ArrayList<Staff> newStaff = Staff.hire("Lewis hamilton", 35, "G", "M.T.W.T.F.SAT");
+                        this.staffArrList = newStaff;
+                        saveStaffFromFile();
+                    } catch (IOException e) {
+                        e.printStackTrace();
                     }
+
+                } else if (listInput.get(0).equals("PROMOTE")) {
+
+                } else if (listInput.get(0).equals("SCHEDULE")) {
+                    StaffScheduler staffScheduler = new StaffScheduler();
+                    staffScheduler.createSchedule((ArrayList) staffArrList);
+                } else if (listInput.get(0).equals("SAW")) {
+
+                } else if (listInput.get(0).equals("EXIT")) {
+
+                } else {
+                        System.out.println("Your command was not recognized.");
                 }
-                i++;
             }
 
         }
-        catch(FileNotFoundException e)
-        {
+        catch(FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();

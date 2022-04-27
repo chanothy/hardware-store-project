@@ -91,7 +91,7 @@ public class FileUtils {
         // TODO
 
         Scanner in = new Scanner(inputFile);
-        ArrayList inputLines = new ArrayList<String>();
+        ArrayList<String> inputLines = new ArrayList<String>();
         while (in.hasNextLine()) {
 //            System.out.println(in.nextLine());
             String line = in.nextLine();
@@ -138,6 +138,11 @@ public class FileUtils {
             }
         }
         in.close();
+        // print out test
+        //for(int i = 0; i < inputLines.size(); i++)
+        //{
+            //System.out.println(inputLines.get(i));
+        //}
         return inputLines;
     }
 //
