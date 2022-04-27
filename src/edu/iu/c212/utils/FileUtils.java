@@ -3,6 +3,7 @@ import edu.iu.c212.models.*;
 
 import java.io.File;
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -38,10 +39,9 @@ public class FileUtils {
         return itemLines;
     }
 
-    // Stores staff
+    // Stores staff and returns list
     public static List<Staff> readStaffFromFile() throws IOException {
         // TODO
-//        System.out.println(staffAvailabilityFile/*.toURI()*/.getPath() + "\n" + staffAvailabilityFile.exists());
         Scanner in = new Scanner(staffAvailabilityFile);
         ArrayList staffLines = new ArrayList<Staff>();
         while (in.hasNextLine()) {
@@ -89,7 +89,56 @@ public class FileUtils {
 
     public static List<String> readCommandsFromFile() throws IOException {
         // TODO
-        return null;
+
+        Scanner in = new Scanner(inputFile);
+        ArrayList inputLines = new ArrayList<String>();
+        while (in.hasNextLine()) {
+//            System.out.println(in.nextLine());
+            String line = in.nextLine();
+            if (line.contains("ADD")) {
+//                System.out.println("yes");
+                String[] temp = line.split("'");
+//                System.out.println(temp[2]);
+                String[] nums = temp[2].strip().split(" ");
+//                System.out.println(nums[2]);
+                String costQuantAisle = nums[0] + "," + nums[1] + "," + nums[2];
+                String cleanedString = temp[0].strip() + "," + (temp[1]).replaceAll("'","") + "," + costQuantAisle;
+                inputLines.add(cleanedString);
+            }
+            else if (line.contains("HIRE")){
+                String[] temp = line.split("'");
+//                System.out.println(temp[2]);
+                String[] info = temp[2].strip().split(" ");
+//                System.out.println(nums[2]);
+                String ageRoleAvail = info[0] + "," + info[1] + "," + info[2];
+                String cleanedString = temp[0].strip() + "," + (temp[1]).replaceAll("'","") + "," + ageRoleAvail;
+                inputLines.add(cleanedString);
+            }
+            else if (line.contains("FIND") || line.contains("COST") || line.contains("FIRE") || line.contains("QUANTITY")){
+                String[] temp = line.split("'");
+                String cleanedString = temp[0].strip() + "," + (temp[1]).replaceAll("'","");
+                inputLines.add(cleanedString);
+            }
+            else if (line.contains("SELL") || line.contains("PROMOTE")){
+                String[] temp = line.split("'");
+                String cleanedString = temp[0].strip() + "," + (temp[1]).replaceAll("'","") + "," + temp[2].strip();
+                inputLines.add(cleanedString);
+            }
+
+            else if (line.contains("SCHEDULE")) {
+                inputLines.add("SCHEDULE");
+            }
+
+            else if (line.contains("SAW")) {
+                inputLines.add("SAW");
+            }
+
+            else if (line.contains("EXIT")) {
+                inputLines.add("EXIT");
+            }
+        }
+        in.close();
+        return inputLines;
     }
 //
 //    public static void writeStoreScheduleToFile(List<String> lines) {

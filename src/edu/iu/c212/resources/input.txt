@@ -7,7 +7,7 @@ FIND 'Hand Truck'
 SELL 'Hammer' 1
 QUANTITY 'Paint Can'
 FIRE 'Joshua Filler'
-HIRE 'Lewis hamilton' 35 G
+HIRE 'Lewis hamilton' 35 G M.T.F
 PROMOTE 'Lewis hamilton' M
 SCHEDULE
 SAW
@@ -16,14 +16,14 @@ EXIT
 
 // Sample Input 2
 
-ADD 'Garden Rakes' 10  1  3
-COST 'Shovel''
+ADD 'Garden Rakes' 10 1 3
+COST 'Shovel'
 FIND 'Hammer'
 FIND 'Digging Forks'
 SELL 'Pilers' 2
 QUANTITY 'Cutter'
 FIRE 'Will Boland'
-HIRE 'Michael Scott' 28 C
+HIRE 'Michael Scott' 28 C T.W.S
 PROMOTE 'Michael Scott' G
 SCHEDULE
 SAW
