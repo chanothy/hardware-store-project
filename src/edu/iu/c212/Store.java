@@ -119,7 +119,6 @@ public class Store implements IStore
                 } else if (tester[0].equals("SCHEDULE"))
                 {
                     StaffScheduler newSchedule = new StaffScheduler();
-                    //newSchedule.createSchedule((ArrayList)staffArrList);
                     try {
                         FileUtils.writeStoreScheduleToFile(newSchedule.createSchedule((ArrayList)staffArrList));
                     } catch (FileNotFoundException e)
