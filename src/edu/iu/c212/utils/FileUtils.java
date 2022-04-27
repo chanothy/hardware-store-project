@@ -152,7 +152,7 @@ public class FileUtils {
         for (int i = 0; i<lines.size(); i++) {
             out.println(lines.get(i));
         }
-
+        out.close();
     }
 
 
