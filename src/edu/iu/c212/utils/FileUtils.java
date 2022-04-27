@@ -49,7 +49,7 @@ public class FileUtils {
             String[] splitLine = ((String) in.nextLine()).split(" ");
 
             // testing for the error
-            System.out.println(splitLine[4]);
+            //System.out.println(splitLine[4]);
 
             String name = splitLine[0] + " " + splitLine[1];
             Integer age = Integer.parseInt(splitLine[2]);
@@ -68,11 +68,13 @@ public class FileUtils {
 //            System.out.println(staff.get(i));
         }
         PrintWriter out = new PrintWriter(inventoryFile);
+
         out.println("// itemName,itemCost,itemQuantity,itemAisle test");
         for (int i = 0; i < inv.size(); i++) {
-            System.out.println(inv.get(i));
+            //System.out.println(inv.get(i));
             out.println(inv.get(i));
         }
+
         out.close();
     }
 
@@ -85,10 +87,13 @@ public class FileUtils {
 //            System.out.println(staff.get(i));
         }
         PrintWriter out = new PrintWriter(staffAvailabilityFile);
+
         for (int i = 0; i < staff.size(); i++) {
-            System.out.println(staff.get(i));
+            //System.out.println(staff.get(i));
             out.println(staff.get(i));
         }
+
+
         out.close();
     }
 

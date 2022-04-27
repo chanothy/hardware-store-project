@@ -25,6 +25,5 @@ QUANTITY 'Cutter'
 FIRE 'Will Boland'
 HIRE 'Michael Scott' 28 C T.W.S
 PROMOTE 'Michael Scott' G
-SCHEDULE
 SAW
 EXIT
