@@ -89,13 +89,11 @@ public class Store implements IStore
                                                                         // FOR THESE, DON'T FORGET TO FileUtils.writeLineToOutputFile();************************************
                 if (tester[0].equals("ADD"))
                 {
-                    try
-                    {
+                    try {
                         ArrayList<Item> newItem = Item.add(tester[1], Integer.parseInt(tester[2]), Integer.parseInt(tester[3]), Integer.parseInt(tester[4]));
                         this.inventoryArrList = newItem;
                         saveItemsFromFile();
-                    } catch(IOException e)
-                    {
+                    } catch(IOException e) {
                         e.printStackTrace();
                     }
 
@@ -121,6 +119,7 @@ public class Store implements IStore
                         ArrayList<Staff> newStaff = Staff.hire(tester[1], Integer.parseInt(tester[2]), tester[3], tester[4]);
                         this.staffArrList = newStaff;
                         saveStaffFromFile();
+                        FileUtils.writeLineToOutputFile(newStaff + " was fired");
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
