@@ -91,10 +91,12 @@ public class Store implements IStore
                 {
                     try
                     {
-
-                    } catch()
+                        ArrayList<Item> newItem = Item.add(tester[1], Integer.parseInt(tester[2]), Integer.parseInt(tester[3]), Integer.parseInt(tester[4]));
+                        this.inventoryArrList = newItem;
+                        saveItemsFromFile();
+                    } catch(IOException e)
                     {
-
+                        e.printStackTrace();
                     }
 
                 } else if (tester[0].equals("COST")) {
