@@ -5,6 +5,7 @@ import edu.iu.c212.utils.FileUtils;
 import javax.swing.plaf.FileChooserUI;
 import java.awt.image.AreaAveragingScaleFilter;
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
