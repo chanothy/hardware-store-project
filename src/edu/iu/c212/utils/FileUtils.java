@@ -101,8 +101,8 @@ public class FileUtils {
 //                System.out.println(temp[2]);
                 String[] nums = temp[2].strip().split(" ");
 //                System.out.println(nums[2]);
-                String costQuantAisle = nums[0] + "," + nums[1] + "," + nums[2];
-                String cleanedString = temp[0].strip() + "," + (temp[1]).replaceAll("'","") + "," + costQuantAisle;
+                String costQuantAisle = nums[0] + ";" + nums[1] + ";" + nums[2];
+                String cleanedString = temp[0].strip() + ";" + (temp[1]).replaceAll("'","") + ";" + costQuantAisle;
                 inputLines.add(cleanedString);
             }
             else if (line.contains("HIRE")){
@@ -110,18 +110,18 @@ public class FileUtils {
 //                System.out.println(temp[2]);
                 String[] info = temp[2].strip().split(" ");
 //                System.out.println(nums[2]);
-                String ageRoleAvail = info[0] + "," + info[1] + "," + info[2];
-                String cleanedString = temp[0].strip() + "," + (temp[1]).replaceAll("'","") + "," + ageRoleAvail;
+                String ageRoleAvail = info[0] + ";" + info[1] + ";" + info[2];
+                String cleanedString = temp[0].strip() + ";" + (temp[1]).replaceAll("'","") + ";" + ageRoleAvail;
                 inputLines.add(cleanedString);
             }
             else if (line.contains("FIND") || line.contains("COST") || line.contains("FIRE") || line.contains("QUANTITY")){
                 String[] temp = line.split("'");
-                String cleanedString = temp[0].strip() + "," + (temp[1]).replaceAll("'","");
+                String cleanedString = temp[0].strip() + ";" + (temp[1]).replaceAll("'","");
                 inputLines.add(cleanedString);
             }
             else if (line.contains("SELL") || line.contains("PROMOTE")){
                 String[] temp = line.split("'");
-                String cleanedString = temp[0].strip() + "," + (temp[1]).replaceAll("'","") + "," + temp[2].strip();
+                String cleanedString = temp[0].strip() + ";" + (temp[1]).replaceAll("'","") + ";" + temp[2].strip();
                 inputLines.add(cleanedString);
             }
 
