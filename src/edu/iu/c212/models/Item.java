@@ -38,4 +38,8 @@ public class Item
         return aisleNum;
     }
 
+    public static void cost() {
+
+    }
+
 }
