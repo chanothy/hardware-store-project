@@ -138,11 +138,6 @@ public class FileUtils {
             }
         }
         in.close();
-        // print out test
-        //for(int i = 0; i < inputLines.size(); i++)
-        //{
-            //System.out.println(inputLines.get(i));
-        //}
         return inputLines;
     }
 //

@@ -83,16 +83,16 @@ public class Staff
     public static ArrayList hire(String staffName, int age, String role, String availability) throws IOException {
         List newStaff = FileUtils.readStaffFromFile();
         newStaff.add(new Staff(staffName,age,role,availability));
-        String fullRole = "";
-        if (role.equals("C")) {
-            fullRole = "Cashier";
-        }
-        else if (role.equals("M")) {
-            fullRole = "Manager";
-        }
-        else {
-            fullRole = "Gardener";
-        }
+//        String fullRole = "";
+//        if (role.equals("C")) {
+//            fullRole = "Cashier";
+//        }
+//        else if (role.equals("M")) {
+//            fullRole = "Manager";
+//        }
+//        else {
+//            fullRole = "Gardener";
+//        }
         return (ArrayList) newStaff;
 //        FileUtils.writeStaffToFile(newStaff);
 //        FileUtils.writeLineToOutputFile(staffName + " has been hired as a " + fullRole);

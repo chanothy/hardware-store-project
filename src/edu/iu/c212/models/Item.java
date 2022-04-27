@@ -1,5 +1,12 @@
 package edu.iu.c212.models;
 
+import edu.iu.c212.utils.FileUtils;
+
+import java.awt.image.AreaAveragingScaleFilter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
 public class Item
 {
     // instance variables
@@ -36,6 +43,12 @@ public class Item
     public int getAisleNum()
     {
         return aisleNum;
+    }
+
+    public static ArrayList add(String itemName, int cost, int itemQuantity, int itemAisle) throws IOException {
+        List newItems = FileUtils.readInventoryFromFile();
+        newItems.add(new Item(itemName,cost,itemQuantity,itemAisle));
+        return (ArrayList) newItems;
     }
 
     public static void cost() {
