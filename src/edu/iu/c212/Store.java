@@ -85,9 +85,19 @@ public class Store implements IStore
             for(int i = 0; i < listInput.size(); i++)
             {
                 String[] tester = listInput.get(i).split(";");
-                //System.out.println("Tester 1: " +tester[1]);
 
-                if (tester[0].equals("ADD")) {
+                                                                        // FOR THESE, DON'T FORGET TO FileUtils.writeLineToOutputFile();************************************
+                if (tester[0].equals("ADD"))
+                {
+                    try
+                    {
+                        ArrayList<Item> newItem = Item.add(tester[1], Integer.parseInt(tester[2]), Integer.parseInt(tester[3]), Integer.parseInt(tester[4]));
+                        this.inventoryArrList = newItem;
+                        saveItemsFromFile();
+                    } catch(IOException e)
+                    {
+                        e.printStackTrace();
+                    }
 
                 } else if (tester[0].equals("COST")) {
 
@@ -117,10 +127,15 @@ public class Store implements IStore
 
                 } else if (tester[0].equals("PROMOTE")) {
 
-                } else if (tester[0].equals("SCHEDULE"))
+                } else if (tester[0].equals("SCHEDULE"))               // LOOK AT TO CHECK THAT PEOPLE WHO WERE JUST HIRED GOT ADDED TO THE SCHEDULE***************************************
                 {
                     StaffScheduler newSchedule = new StaffScheduler();
-                    newSchedule.createSchedule((ArrayList)staffArrList);
+                    try {
+                        FileUtils.writeStoreScheduleToFile(newSchedule.createSchedule((ArrayList)staffArrList));
+                    } catch (FileNotFoundException e)
+                    {
+                        e.printStackTrace();
+                    }
 
                 }
                 else if (tester[0].equals("SAW")) {
@@ -132,10 +147,13 @@ public class Store implements IStore
                 }
             }
 
+            /*
             for(int i = 0; i < listInput.size(); i++)
             {
                 System.out.println(listInput.get(i));
             }
+
+             //*/
 
         }
         catch(FileNotFoundException e) {

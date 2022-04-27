@@ -55,7 +55,7 @@ public class StaffScheduler
     }
 
     // schedule employees --> where scheduling logic goes
-    public static void createSchedule(ArrayList<Staff> staffList)
+    public static ArrayList<String> createSchedule(ArrayList<Staff> staffList)
     {
         // read in shift schedule
         try {
@@ -146,6 +146,7 @@ public class StaffScheduler
 
             outSchedule.add(tempStr);
         }
+        /*
 
         for(int i = 0; i < managers.size(); i++)
         {
@@ -159,15 +160,14 @@ public class StaffScheduler
         {
             System.out.println(gardeningExperts.get(i).getName() + " " + gardeningExperts.get(i).getHoursAssigned());
         }
+        // */
 
+
+        // GET CODE TO ADD CURRENT DATE AND TIME****************************************************************************************************
         outSchedule.add(0,"DATE AND TIME WILL GO HERE");
 
-        try {
-            FileUtils.writeStoreScheduleToFile(outSchedule);
-        } catch (FileNotFoundException e)
-        {
-            e.printStackTrace();
-        }
+        return outSchedule;
+
     }
 
 }
