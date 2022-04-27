@@ -7,6 +7,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class StaffScheduler
@@ -97,8 +98,8 @@ public class StaffScheduler
             String[] dayHours = shifts.get(j);
             String day = dayHours[0];
             double hours = Double.parseDouble(dayHours[1]);
-            System.out.println("day: " + day);
-            System.out.println("hour: " + hours);
+            //System.out.println("day: " + day);
+            //System.out.println("hour: " + hours);
 
             String tempStr;
 
@@ -112,7 +113,7 @@ public class StaffScheduler
                     tempStr = tempStr + " (" + managers.get(i).getName() + ")";
                     managers.get(i).setHoursAssigned(hours);
                     // re-sort manager
-
+                    Collections.sort(managers);
                     break;
                 }
             }
@@ -123,6 +124,10 @@ public class StaffScheduler
                 if(cashiers.get(i).checkAvailability(day))
                 {
                     tempStr = tempStr + " (" + cashiers.get(i).getName() + ")";
+                    cashiers.get(i).setHoursAssigned(hours);
+                    // re-sort cashiers
+                    Collections.sort(cashiers);
+                    break;
                 }
             }
 
@@ -131,7 +136,11 @@ public class StaffScheduler
             {
                 if(gardeningExperts.get(i).checkAvailability(day))
                 {
-                        tempStr = tempStr + " (" + gardeningExperts.get(i).getName() + ")";
+                    tempStr = tempStr + " (" + gardeningExperts.get(i).getName() + ")";
+                    gardeningExperts.get(i).setHoursAssigned(hours);
+                    // re-sort gardening experts
+                    Collections.sort(gardeningExperts);
+                    break;
                 }
             }
 
