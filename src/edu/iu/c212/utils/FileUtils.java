@@ -2,6 +2,7 @@ package edu.iu.c212.utils;
 import edu.iu.c212.models.*;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -144,11 +145,16 @@ public class FileUtils {
         in.close();
         return inputLines;
     }
-//
-//    public static void writeStoreScheduleToFile(List<String> lines) {
-//        // TODO
-//    }
-//
+
+    public static void writeStoreScheduleToFile(List<String> lines) throws FileNotFoundException {
+        // TODO
+        PrintWriter out = new PrintWriter("store_schedule_OUT.txt");
+        for (int i = 0; i<lines.size(); i++) {
+            out.println(lines.get(i));
+        }
+
+    }
+
 
     // updates output file
     public static void writeLineToOutputFile(String line) throws IOException{
