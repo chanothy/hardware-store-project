@@ -86,6 +86,9 @@ public class Store implements IStore
             {
                 String[] tester = listInput.get(i).split(";");
 
+                // in this if/else if/ else block, we could have streamlined out code so that most of the logic would
+                // be here instead of in the item class and staff class, however when we wrote these programs, it was
+                // before we had some key input information.
 
                 if (tester[0].equals("ADD"))
                 {
@@ -187,7 +190,7 @@ public class Store implements IStore
                         e.printStackTrace();
                     }
 
-                } else if (tester[0].equals("SCHEDULE"))               // LOOK AT TO CHECK THAT PEOPLE WHO WERE JUST HIRED GOT ADDED TO THE SCHEDULE***************************************
+                } else if (tester[0].equals("SCHEDULE"))
                 {
                     StaffScheduler newSchedule = new StaffScheduler();
                     try {
@@ -207,19 +210,11 @@ public class Store implements IStore
                     }
 
                 } else if (tester[0].equals("EXIT")) {
-
+                    break;
                 } else {
                         System.out.println("Your command was not recognized.");
                 }
             }
-
-            /*
-            for(int i = 0; i < listInput.size(); i++)
-            {
-                System.out.println(listInput.get(i));
-            }
-
-             //*/
 
         }
         catch(FileNotFoundException e) {

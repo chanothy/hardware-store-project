@@ -107,8 +107,7 @@ public class StaffScheduler
             String[] dayHours = shifts.get(j);
             String day = dayHours[0];
             double hours = Double.parseDouble(dayHours[1]);
-            //System.out.println("day: " + day);
-            System.out.println("hour: " + hours);
+
 
             String tempStr;
 
@@ -155,22 +154,6 @@ public class StaffScheduler
 
             outSchedule.add(tempStr);
         }
-        /*
-
-        for(int i = 0; i < managers.size(); i++)
-        {
-            System.out.println("MANAGERS: " + managers.get(i).getName() + " " + managers.get(i).getHoursAssigned());
-        }
-        for(int i = 0; i < cashiers.size(); i++)
-        {
-            System.out.println("CASHIERS: " +cashiers.get(i).getName() + " " + cashiers.get(i).getHoursAssigned());
-        }
-        for(int i = 0; i < gardeningExperts.size(); i++)
-        {
-            System.out.println("GARDEN: " +gardeningExperts.get(i).getName() + " " + gardeningExperts.get(i).getHoursAssigned());
-        }
-        // */
-
 
         // GET CODE TO ADD CURRENT DATE AND TIME
         LocalDateTime dateTime = LocalDateTime.now();
