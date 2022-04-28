@@ -86,7 +86,7 @@ public class Store implements IStore
             {
                 String[] tester = listInput.get(i).split(";");
 
-                                                                        // FOR THESE, DON'T FORGET TO FileUtils.writeLineToOutputFile();************************************
+
                 if (tester[0].equals("ADD"))
                 {
                     try {
@@ -97,7 +97,14 @@ public class Store implements IStore
                         e.printStackTrace();
                     }
 
-                } else if (tester[0].equals("COST")) {
+                } else if (tester[0].equals("COST"))
+                {
+                    try{
+                        Item.cost(tester[1]);
+                    } catch (IOException e)
+                    {
+                        e.printStackTrace();
+                    }
 
                 } else if (tester[0].equals("FIND"))
                 {
@@ -107,9 +114,17 @@ public class Store implements IStore
                         e.printStackTrace();
                     }
 
-                } else if (tester[0].equals("SELL")) {
+                } else if (tester[0].equals("SELL"))
+                {
 
-                } else if (tester[0].equals("QUANTITY")) {
+
+                } else if (tester[0].equals("QUANTITY"))
+                {
+                    try{
+                        Item.quantity(tester[1]);
+                    }catch(IOException e){
+                        e.printStackTrace();
+                    }
 
                 } else if (tester[0].equals("FIRE")) {
                     try {
@@ -184,6 +199,12 @@ public class Store implements IStore
 
                 }
                 else if (tester[0].equals("SAW")) {
+                    try{
+                        SawPrimePlanks.saw();
+                    } catch(IOException e)
+                    {
+                        e.printStackTrace();
+                    }
 
                 } else if (tester[0].equals("EXIT")) {
 
