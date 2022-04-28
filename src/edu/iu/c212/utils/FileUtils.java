@@ -153,7 +153,7 @@ public class FileUtils {
 
     public static void writeStoreScheduleToFile(List<String> lines) throws FileNotFoundException {
         // TODO
-        PrintWriter out = new PrintWriter("store_schedule_OUT.txt");
+        PrintWriter out = new PrintWriter(storeScheduleFile);
         for (int i = 0; i<lines.size(); i++) {
             out.println(lines.get(i));
         }
