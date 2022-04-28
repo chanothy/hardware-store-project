@@ -94,15 +94,7 @@ public class Store implements IStore
                 {
                     try {
                         ArrayList<Item> newItem = Item.add(tester[1], Integer.parseInt(tester[2]), Integer.parseInt(tester[3]), Integer.parseInt(tester[4]));
-                        //***************************************************
-                        for(int j = 0; j < inventoryArrList.size(); j++)
-                        {
-                            if(!(inventoryArrList.get(j).getName().equals(newItem.get(j).getName())))
-                            {
-                                inventoryArrList.add(newItem.get(j));
-                            }
-                        }
-
+                        this.inventoryArrList = newItem;
                         saveItemsFromFile();
                     } catch(IOException e) {
                         e.printStackTrace();
