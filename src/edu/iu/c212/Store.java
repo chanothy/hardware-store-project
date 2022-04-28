@@ -119,7 +119,13 @@ public class Store implements IStore
 
                 } else if (tester[0].equals("SELL"))
                 {
-
+                    try{
+                        ArrayList<Item> updatedArrList = Item.sell(tester[1], Integer.parseInt(tester[2]));
+                        this.inventoryArrList = updatedArrList;
+                        saveItemsFromFile();
+                    } catch(IOException e) {
+                        e.printStackTrace();
+                    }
 
                 } else if (tester[0].equals("QUANTITY"))
                 {
