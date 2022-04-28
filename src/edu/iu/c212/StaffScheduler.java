@@ -6,6 +6,8 @@ import edu.iu.c212.utils.FileUtils;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
@@ -150,21 +152,28 @@ public class StaffScheduler
 
         for(int i = 0; i < managers.size(); i++)
         {
-            System.out.println(managers.get(i).getName() + " " + managers.get(i).getHoursAssigned());
+            System.out.println("MANAGERS: " + managers.get(i).getName() + " " + managers.get(i).getHoursAssigned());
         }
         for(int i = 0; i < cashiers.size(); i++)
         {
-            System.out.println(cashiers.get(i).getName() + " " + cashiers.get(i).getHoursAssigned());
+            System.out.println("CASHIERS: " +cashiers.get(i).getName() + " " + cashiers.get(i).getHoursAssigned());
         }
         for(int i = 0; i < gardeningExperts.size(); i++)
         {
-            System.out.println(gardeningExperts.get(i).getName() + " " + gardeningExperts.get(i).getHoursAssigned());
+            System.out.println("GARDEN: " +gardeningExperts.get(i).getName() + " " + gardeningExperts.get(i).getHoursAssigned());
         }
         // */
 
 
-        // GET CODE TO ADD CURRENT DATE AND TIME****************************************************************************************************
-        outSchedule.add(0,"DATE AND TIME WILL GO HERE");
+        // GET CODE TO ADD CURRENT DATE AND TIME
+        LocalDateTime dateTime = LocalDateTime.now();
+        DateTimeFormatter df = DateTimeFormatter.ofPattern("M/dd/yyyy");
+        String formattedDate = dateTime.format(df);
+        DateTimeFormatter tf = DateTimeFormatter.ofPattern("HHmm");
+        String formattedTime = dateTime.format(tf);
+        String finalDateTime = "Created on " + formattedDate + " at " + formattedTime;
+
+        outSchedule.add(0,finalDateTime);
 
         return outSchedule;
 
