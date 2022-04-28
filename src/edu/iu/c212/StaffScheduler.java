@@ -38,8 +38,15 @@ public class StaffScheduler
                 int closes = inFile.nextInt();
 
                 // take opening and closing hours and get how long the shift is
-                double hours = (closes - opens) / 100;
-                String returnHours = Double.toString(hours);
+                int rawDuration = closes - opens;
+                //System.out.println(rawDuration);
+                double hours = rawDuration / 100;
+                //System.out.println(hours);
+                double minuteRemainder = rawDuration % 100;
+                double hourDecimal = minuteRemainder / 60;
+                double decimalHours = hours + hourDecimal;
+
+                String returnHours = Double.toString(decimalHours);
 
                 // add day and hours to return array list
                 String[] tempArr = {day, returnHours};
@@ -101,7 +108,7 @@ public class StaffScheduler
             String day = dayHours[0];
             double hours = Double.parseDouble(dayHours[1]);
             //System.out.println("day: " + day);
-            //System.out.println("hour: " + hours);
+            System.out.println("hour: " + hours);
 
             String tempStr;
 
