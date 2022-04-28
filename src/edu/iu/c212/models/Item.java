@@ -48,14 +48,12 @@ public class Item
     public static ArrayList add(String itemName, int cost, int itemQuantity, int itemAisle) throws IOException {
         List newItems = FileUtils.readInventoryFromFile();
         for (int i = 0; i< newItems.size(); i++) {
-            if (((Item) newItems.get(i)).getName().equals(itemName)) {
+            if (((Item) newItems.get(i)).getName().contains(itemName)) {
+//                System.out.println("Byeah");
                 return (ArrayList) newItems;
             }
-            else
-            {
-                newItems.add(new Item(itemName,cost,itemQuantity,itemAisle));
-            }
         }
+        newItems.add(new Item(itemName,cost,itemQuantity,itemAisle));
         return (ArrayList) newItems;
     }
 
