@@ -473,3 +473,54 @@ Michael Scott has been hired as a Cashier
 Michael Scott was promoted to Gardening Expert
 Schedule created
 Planks sawed.
+Multi Bit Ratcheting: $59
+Error: Thermostat cannot be found.
+Error: Hand Truck cannot be found.
+Error: Hammer could not be sold
+Joshua Filler was fired
+Lewis hamilton has been hired as a Gardening Expert
+Lewis hamilton was promoted to Manager
+Planks sawed.
+Shovel: $40
+Error: Hammer cannot be found.
+Error: Digging Forks cannot be found.
+Error: Pilers could not be sold
+Will Boland was fired
+Michael Scott has been hired as a Cashier
+Michael Scott was promoted to Gardening Expert
+Schedule created
+Planks sawed.
+Multi Bit Ratcheting: $59
+Error: Thermostat cannot be found.
+Error: Hand Truck cannot be found.
+Error: Hammer could not be sold
+Joshua Filler was fired
+Lewis hamilton has been hired as a Gardening Expert
+Lewis hamilton was promoted to Manager
+Planks sawed.
+Shovel: $40
+Error: Hammer cannot be found.
+Error: Digging Forks cannot be found.
+Error: Pilers could not be sold
+Will Boland was fired
+Michael Scott has been hired as a Cashier
+Michael Scott was promoted to Gardening Expert
+Schedule created
+Planks sawed.
+Multi Bit Ratcheting: $59
+Error: Thermostat cannot be found.
+Error: Hand Truck cannot be found.
+Error: Hammer could not be sold
+Joshua Filler was fired
+Lewis hamilton has been hired as a Gardening Expert
+Lewis hamilton was promoted to Manager
+Planks sawed.
+Shovel: $40
+Error: Hammer cannot be found.
+Error: Digging Forks cannot be found.
+Error: Pilers could not be sold
+Will Boland was fired
+Michael Scott has been hired as a Cashier
+Michael Scott was promoted to Gardening Expert
+Schedule created
+Planks sawed.
