@@ -113,7 +113,6 @@ public class Store implements IStore
                 {
                     try {
                         Item.find(tester[1]);
-                        System.out.println("Find is happening");
                     } catch (IOException e) {
                         e.printStackTrace();
                     }

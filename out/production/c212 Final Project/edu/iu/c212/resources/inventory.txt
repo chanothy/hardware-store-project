@@ -23,5 +23,3 @@
 'Leaf Blower',91,18,8
 'Cordless Screwdriver',30,1,2
 'Garden Rakes',10,1,3
-'Cordless Screwdriver',30,1,2
-'Garden Rakes',10,1,3
