@@ -1,3 +1,4 @@
+import edu.iu.c212.SawPrimePlanks;
 import edu.iu.c212.models.Item;
 
 import java.io.IOException;
@@ -5,6 +6,6 @@ import java.io.IOException;
 public class Test {
 
     public static void main(String[] args) throws IOException {
-        Item.cost("Cotton Hoe");
+        SawPrimePlanks.saw();
     }
 }
