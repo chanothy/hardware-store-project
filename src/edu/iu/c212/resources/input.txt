@@ -2,8 +2,8 @@
 
 ADD 'Cordless Screwdriver' 30 1 2
 COST 'Multi Bit Ratcheting'
-FIND 'Thermostat'
-FIND 'Hand Truck'
+FIND 'Composters'
+FIND 'Hand Trucks'
 SELL 'Hammer' 1
 QUANTITY 'Paint Can'
 FIRE 'Joshua Filler'
