@@ -51,8 +51,11 @@ public class Item
             if (((Item) newItems.get(i)).getName().equals(itemName)) {
                 return (ArrayList) newItems;
             }
+            else
+            {
+                newItems.add(new Item(itemName,cost,itemQuantity,itemAisle));
+            }
         }
-        newItems.add(new Item(itemName,cost,itemQuantity,itemAisle));
         return (ArrayList) newItems;
     }
 

@@ -201,6 +201,7 @@ public class Store implements IStore
                     StaffScheduler newSchedule = new StaffScheduler();
                     try {
                         FileUtils.writeStoreScheduleToFile(newSchedule.createSchedule((ArrayList)staffArrList));
+                        FileUtils.writeLineToOutputFile("Schedule created");
                     } catch (FileNotFoundException e)
                     {
                         e.printStackTrace();

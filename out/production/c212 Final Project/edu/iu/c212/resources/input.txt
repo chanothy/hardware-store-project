@@ -10,7 +10,6 @@ FIRE 'Joshua Filler'
 HIRE 'Lewis hamilton' 35 G M.T.F
 PROMOTE 'Lewis hamilton' M
 SAW
-EXIT
 
 
 // Sample Input 2
