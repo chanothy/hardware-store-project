@@ -41,6 +41,13 @@ public class SawPrimePlanks {
         }
     }
 
+    public static void saw() throws IOException {
+        List inv = FileUtils.readInventoryFromFile();
+        for (int i = 0; i<inv.size(); i++) {
+//            if
+        }
+    }
+
     public static List<Integer> getPlankLengths(int longPlankLength) throws IOException {
         int plankLength = longPlankLength;
         int primeLen = sawPlank(plankLength);

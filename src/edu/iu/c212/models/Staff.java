@@ -82,6 +82,11 @@ public class Staff implements Comparable
     // hiring method
     public static ArrayList hire(String staffName, int age, String role, String availability) throws IOException {
         List newStaff = FileUtils.readStaffFromFile();
+        for (int i = 0; i<newStaff.size(); i++) {
+            if (((Staff) newStaff.get(i)).getName().equals(staffName)) {
+                return (ArrayList) newStaff;
+            }
+        }
         newStaff.add(new Staff(staffName,age,role,availability));
 //        String fullRole = "";
 //        if (role.equals("C")) {
