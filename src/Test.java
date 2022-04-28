@@ -9,6 +9,7 @@ public class Test {
 
     public static void main(String[] args) throws IOException {
 //        SawPrimePlanks.saw();
-        Item.quantity("Hammer");
+        System.out.println(((Item) Item.sell("Hamlmer",1).get(1)).getQuantity());
+
     }
 }
