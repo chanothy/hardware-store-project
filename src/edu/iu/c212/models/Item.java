@@ -70,7 +70,7 @@ public class Item
     public static void find(String itemName) throws IOException{
         List items = FileUtils.readInventoryFromFile();
         for (int i = 0; i< items.size(); i++) {
-            if (((Item)items.get(i)).getName().equals(itemName)) {
+            if (((Item)items.get(i)).getName().contains(itemName)) {
                 StoreMapDisplay.display((Item) items.get(i));
                 FileUtils.writeLineToOutputFile("Performing store lookup for " + itemName);
                 return;
