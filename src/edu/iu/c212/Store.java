@@ -217,7 +217,16 @@ public class Store implements IStore
                     }
 
                 } else if (tester[0].equals("EXIT")) {
-                    break;
+                    FileUtils.writeLineToOutputFile("Thank you for visiting High’s Hardware and Gardening!");
+                    System.out.println("Press enter to continue… ");
+
+                    Scanner scan = new Scanner(System.in);
+
+                    if(scan.nextLine() == "")
+                    {
+                        System.exit(0);
+                    }
+
                 } else {
                         System.out.println("Your command was not recognized.");
                 }
