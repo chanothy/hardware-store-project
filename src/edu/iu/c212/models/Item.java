@@ -3,7 +3,6 @@ package edu.iu.c212.models;
 import edu.iu.c212.programs.StoreMapDisplay;
 import edu.iu.c212.utils.FileUtils;
 
-import java.awt.image.AreaAveragingScaleFilter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -48,6 +47,11 @@ public class Item
 
     public static ArrayList add(String itemName, int cost, int itemQuantity, int itemAisle) throws IOException {
         List newItems = FileUtils.readInventoryFromFile();
+        for (int i = 0; i< newItems.size(); i++) {
+            if (((Item) newItems.get(i)).getName().equals(itemName)) {
+                return (ArrayList) newItems;
+            }
+        }
         newItems.add(new Item(itemName,cost,itemQuantity,itemAisle));
         return (ArrayList) newItems;
     }
@@ -56,7 +60,7 @@ public class Item
         List items = FileUtils.readInventoryFromFile();
         for (int i = 0; i< items.size(); i++) {
             if (((Item)items.get(i)).getName().equals(itemName)) {
-                FileUtils.writeLineToOutputFile(itemName + ": $" + Integer.toString(((int)((Item)items.get(i)).getPrice())));
+                FileUtils.writeLineToOutputFile(itemName + ": $" + (((int)((Item)items.get(i)).getPrice())));
             }
         }
 //        FileUtils.writeLineToOutputFile("Error: This " + itemName + " cannot be found.");
@@ -86,6 +90,11 @@ public class Item
                 int aisle = ((Item)items.get(i)).getAisleNum();
                 if (origQuantity - quantity < 0) {
                     FileUtils.writeLineToOutputFile("Error: " + itemName + " could not be sold");
+                    return items;
+                }
+                else if (origQuantity - quantity == 0) {
+                    items.remove(items.get(i));
+                    FileUtils.writeLineToOutputFile(quantity + " " + itemName + " was sold");
                     return items;
                 }
                 else {
