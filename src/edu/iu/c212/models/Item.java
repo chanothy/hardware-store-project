@@ -74,4 +74,38 @@ public class Item
         FileUtils.writeLineToOutputFile("Error: " + itemName + " cannot be found.");
     }
 
+    public static ArrayList sell(String itemName, int quantity) throws IOException{
+        ArrayList items = new ArrayList();
+        for (int i = 0; i<FileUtils.readInventoryFromFile().size(); i++) {
+            items.add(FileUtils.readInventoryFromFile().get(i));
+        }
+        for (int i = 0; i< items.size(); i++) {
+            if (((Item)items.get(i)).getName().equals(itemName)) {
+                int cost = (int)((Item)items.get(i)).getPrice();
+                int origQuantity = ((Item)items.get(i)).getQuantity();
+                int aisle = ((Item)items.get(i)).getAisleNum();
+                if (origQuantity - quantity < 0) {
+                    FileUtils.writeLineToOutputFile("Error: " + itemName + " could not be sold");
+                    return items;
+                }
+                else {
+                    items.set(i, new Item(itemName, cost, origQuantity - quantity, aisle));
+                    FileUtils.writeLineToOutputFile(quantity + " " + itemName + " was sold");
+                    return items;
+                }
+            }
+        }
+        FileUtils.writeLineToOutputFile("Error: " + itemName + " could not be sold");
+        return items;
+    }
+
+    public static void quantity(String itemName) throws IOException{
+        List items = FileUtils.readInventoryFromFile();
+        for (int i = 0; i< items.size(); i++) {
+            if (((Item)items.get(i)).getName().equals(itemName)) {
+                FileUtils.writeLineToOutputFile(itemName + " quantity: " + Integer.toString(((int)((Item)items.get(i)).getQuantity())));
+            }
+        }
+    }
+
 }
