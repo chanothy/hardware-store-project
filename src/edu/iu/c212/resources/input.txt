@@ -1,17 +1,3 @@
-// Sample Input 1
-
-ADD 'Cordless Screwdriver' 30 1 2
-COST 'Multi Bit Ratcheting'
-FIND 'Composters'
-FIND 'Hand trucks'
-SELL 'Hammer' 1
-QUANTITY 'Paint Can'
-FIRE 'Joshua Filler'
-HIRE 'Lewis hamilton' 35 G M.T.F
-PROMOTE 'Lewis hamilton' M
-SAW
-
-
 // Sample Input 2
 
 ADD 'Garden Rakes' 10 1 3

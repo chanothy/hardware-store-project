@@ -54,6 +54,7 @@ public class Item
             }
         }
         newItems.add(new Item(itemName,cost,itemQuantity,itemAisle));
+        FileUtils.writeLineToOutputFile(itemName + " was added to inventory");
         return (ArrayList) newItems;
     }
 
@@ -114,8 +115,9 @@ public class Item
         for (int i = 0; i< items.size(); i++) {
             if (((Item)items.get(i)).getName().equals(itemName)) {
                 FileUtils.writeLineToOutputFile(itemName + " quantity: " + Integer.toString(((int)((Item)items.get(i)).getQuantity())));
+                return;
             }
         }
+        FileUtils.writeLineToOutputFile(itemName + " quantity: 0");
     }
-
 }
